@@ -1,0 +1,414 @@
+/* General */
+* {
+    padding: 0;
+    font-size: 14px ;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    font-family: "Segoe UI";
+}
+body{
+    color: #676767;
+    background-color: #ebebeb;
+}
+::-moz-selection {
+    background: #8cbd01;
+    color:white;
+}
+::selection
+{
+    background: #8cbd01;
+    color:white;
+}
+.mdrecords-body{
+    margin-top: 55px;
+}
+.DivHeaderText{
+    color: #0d8ab3;
+    font-weight:bolder;
+}
+
+/* Navigation Bar */
+nav{
+    line-height: 24px;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    -webkit-border-image: -webkit-linear-gradient(
+        left, #0996c1, #0fceca 
+    ) 0 0 100% 0/0 0 5px 0;
+    -moz-border-bottom-image: -moz-linear-gradient(
+        right, #0996c1, #0fceca
+    ) 0 0 100% 0/0 0 5px 0;
+    -o-border-bottom-image: -o-linear-gradient(
+        right, #0996c1, #0fceca
+    ) 0 0 100% 0/0 0 5px 0;
+    border-image: linear-gradient(
+        to right, #0996c1, #0fceca
+    ) 0 0 100% 0/0 0 5px 0;
+}
+a.navigation{
+    float: left;
+    font-size: 16px;
+    color: #676767;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.dropdown {
+    float: left;
+}
+.dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #676767;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+a.navigation:hover, .dropdown:hover .dropbtn {
+    background-color: #0996c1 ;
+    color: white;
+    height: 52px;
+    text-decoration: none;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #0fceca;
+    text-decoration: none;
+    color: white;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.mdrecords-logo{
+    width: 66px; 
+    height: 42px; 
+    margin-right: 18px;
+}
+.user-details{
+    vertical-align:middle; 
+    line-height: 10px;
+}
+.user-details-table{
+    width:100%; 
+    white-space:nowrap;
+}
+.user-detail-photo{
+    width: 40px;
+    height: 40px;
+    box-shadow: ghostwhite 5px;
+}
+.user-detail-name{
+    color:#0996c1;
+    font-weight: 700;
+    cursor:pointer;
+}
+.menu-icon{
+    float:right;
+    margin-right: -14px;
+}
+.menu-list{
+    right: 0;
+}
+.navbar {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+
+/*sidenav css*/
+
+.sidebar-container {
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #1a1a1a;
+    color: #fff;
+  }
+  
+  .content-container {
+    padding-top: 20px;
+  }
+  
+  .sidebar-logo {
+    padding: 10px 15px 10px 30px;
+    font-size: 20px;
+    background-color: #2574A9;
+  }
+  
+  .sidebar-navigation {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+  }
+  
+  .sidebar-navigation li {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 20px;
+  }
+  
+  .sidebar-navigation li a {
+    padding: 10px 15px 10px 30px;
+    display: block;
+    color: #fff;
+  }
+  
+  .sidebar-navigation li .fa {
+    margin-right: 10px;
+  }
+  
+  .sidebar-navigation li a:active,
+  .sidebar-navigation li a:hover,
+  .sidebar-navigation li a:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  
+  .sidebar-navigation li::before {
+    background-color: #2574A9;
+    position: absolute;
+    content: '';
+    height: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 3px;
+    z-index: -1;
+  }
+  
+  .sidebar-navigation li:hover::before {
+    width: 100%;
+  }
+  
+  .sidebar-navigation .header {
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #151515;
+    padding: 10px 15px 10px 30px;
+  }
+  
+  .sidebar-navigation .header::before {
+    background-color: transparent;
+  }
+  
+  .content-container {
+    padding-left: 220px;
+  }
+
+ 
+.tblheadfont1{
+    font-family:'Segoe UI';
+    font-size:11px;
+    text-align:center;
+
+}
+
+.cnterAlgn{
+    text-align:center; 
+}
+
+
+/*TAb CSs*/
+
+.tab {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    width: 20px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136, 0.3);
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0996c1; 
+  }
+  /* Style the buttons inside the tab */
+  .tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 7px 7px 7px 6px;
+    transition: 0.3s;
+    font-size: 14px;
+    color: #0996c1;
+    font-weight: 500;
+    min-width: 110px;
+    max-width: 150px;
+    display: inline-block;
+    margin-left: -5px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    border-right: 1px solid #ebebeb;
+  }
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  /* Create an active/current tablink class */
+  .tab button.active {
+    background-color: #0fceca;
+    color: white;
+  }
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+  }
+  .my-btn {
+       border: 1px solid #dddddd;
+       display: inline-block;
+       padding: 5px;
+       position: relative;
+       text-align: center;
+       transition: background 600ms ease, color 600ms ease;
+       color: #676767;
+       font-weight: 400 !important;
+  }
+   input[type="radio"].toggle {
+       display: none;
+  }
+   input[type="radio"].toggle + label {
+       cursor: pointer;
+       min-width: 60px;
+  }
+   input[type="radio"].toggle + label:hover {
+       background: #0fceca;
+       color: white;
+       border: 1px solid #0fceca;
+  }
+   input[type="radio"].toggle + label:after {
+       background: #0996c1;
+       content: "";
+       height: 100%;
+       position: absolute;
+       top: 0;
+       transition: left 200ms cubic-bezier(0.77, 0, 0.175, 1);
+       width: 100%;
+       z-index: -1;
+  }
+   input[type="radio"].toggle.toggle-left + label {
+       border-right: 0;
+  }
+   input[type="radio"].toggle.toggle-left + label:after {
+       left: 100%;
+  }
+   input[type="radio"].toggle.toggle-right + label {
+       margin-left: -4px;
+  }
+   input[type="radio"].toggle.toggle-right + label:after {
+       left: -100%;
+  }
+   input[type="radio"][value="true"].toggle:checked + label {
+       cursor: default;
+       color: #fff;
+       transition: color 200ms;
+       background: #de6600;
+       border: 1px solid #de6600;
+  }
+  input[type="radio"][value="false"].toggle:checked + label {
+       cursor: default;
+       color: #fff;
+       transition: color 200ms;
+       background: #8cbd01;
+       border: 1px solid #8cbd01;
+  }
+   input[type="radio"].toggle:checked + label:after {
+       left: 0;
+  }
+
+  /*div Template*/
+
+  div.DivTemplate{
+    /* max-width: 1024px; */
+    width:100%;
+    display:inline-block;
+    margin-top: 10px;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    /* min-width:600px; */
+    background-color: white;
+    padding : 10px 10px 10px 10px; /* Padding Top/Right/Bottom/Left */
+    -webkit-box-shadow: 2px 2px 0px 0px #0fceca;
+    -o-box-shadow: 2px 2px 0px 0px #0fceca ;
+    -moz-box-shadow: 2px 2px 0px 0px #0fceca ;
+    box-shadow: 2px 2px 0px 0px #0fceca;
+}
+
+/*Hr css*/
+
+
+.hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #0fceca, #0996c1, #0fceca);
+    margin-top: -10px;
+    width: 100%;
+}
+
+/*HeaderBanner css*/
+
+.HeaderBanner {
+    background: -webkit-linear-gradient(left, #0fceca , #0996c1);
+    background: -o-linear-gradient(left, #0fceca, #0996c1);
+    background: -moz-linear-gradient(left, #0fceca, #0996c1);
+    background: linear-gradient(to left, #0fceca , #0996c1);
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+    padding:10px;
+    border-radius: .75rem .75rem 0rem 0rem;
+    letter-spacing: 1px;
+}
+
+
+/*th-bg*/
+
+.thead-bg {
+    color: white;
+    background-color: #0996c1;
+}
+
+/*side bar font size*/
+
+.sbsize{
+    font-size:10px;
+}
