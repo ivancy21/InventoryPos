@@ -17,7 +17,7 @@
     </div>
     
     <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-            <button type="button" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
+    <a type="submit" onclick="window.location='{{route('price.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</a>
     <div class="tab">
             <button class="tablinks" onclick="openTab(event, 'ProdList')">Product List</button>
             <button class="tablinks" onclick="openTab(event, 'ProdHistory')">History</button>
@@ -71,7 +71,10 @@
                                         Action
                                         </button>
                                         <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalEdit"> <i class="fa fa-edit"></i> Edit</a>   
+                                            </form>
+                                            <button type="submit" class="dropdown-item" onclick="window.location='{{route('productList.edit',$medicineLists->id)}}'"><i class="far fa-edit">Edit</i></button> 
+                                   
+                                        <a class="dropdown-item"  data-toggle="modal" onclick="window.location='{{route('price.edit',$prices->id)}}'"> <i class="fa fa-edit"></i> Edit</a>   
                                         <a class="dropdown-item" href="#" data-toggle="modal" disabled data-target="#modalDelete"> <i class="fa fa-trash-alt"></i> remove</a>   
                                     </div></td>
                             </tr>
