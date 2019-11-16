@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('/addProducts', function () {
-    return view('Panels.addProducts');
-});
 
-Route::get('/productList', function () {
-    return view('Panels.productList');
-});
+
 
 Route::get('/', function () {
-    return view('Panels.homePage');
+    return view('homePage');
+});
+
+Route::get('/payment', function () {
+    return view('Panels.Pos.payment');
+});
+
+Route::get('/pos', function () {
+    return view('Panels.Pos.index');
 });
 Route::resource('medicine','MedicineController');
 Route::resource('pharmacyMedicine','PharmacyMedicineController');
