@@ -5,7 +5,7 @@
 
 <form class="form-horizontal" method="POST"  action="{{ route('pharmacyMedicine.store') }}">
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-{!!csrf_field()!!}
+@csrf
 <div class="content-container">
       
         <div class="container-fluid">

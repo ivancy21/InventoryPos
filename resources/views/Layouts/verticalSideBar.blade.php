@@ -19,6 +19,12 @@
                   <i class="fa fa-align-justify" aria-hidden="true"></i>Add Pharmacy Medicine
               </a>
           </li>
+          <li>
+            <a href="/pos">
+                <i class="fa fa-align-justify" aria-hidden="true"></i>Pos
+            </a>
+        </li>
+        
           <li class="header">Another Menu</li>
           <li>
             <a href="#">
