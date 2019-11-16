@@ -3,7 +3,7 @@
 
 @include('Layouts.verticalSideBar')
 
-<form class="form-horizontal" method="POST" action="{{route('price.update',$price->id)}}">
+<form class="form-horizontal" method="POST" action="{{route('medicine.update',$medicine->id)}}">
  @csrf
  @method('PUT')
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -19,36 +19,36 @@
                       <div class="row">
                           <div class="col-sm-4">
                               <label for="exampleForm2">Product Code</label>
-                              <input type="text" id="productCode" class="form-control" name="productCode" value='{{$price->productCode}}' >
+                              <input type="text" id="productCode" class="form-control" name="productCode" value='{{$medicine->productCode}}' >
                           </div>
                           <div class="col-sm-4">
                               <label for="exampleForm2">Name</label>
-                              <input type="text" id="name" class="form-control" name="name" value='{{$price->name}}' >
+                              <input type="text" id="name" class="form-control" name="name" value='{{$medicine->name}}' >
                           </div>
                           <div class="col-sm-4">
                               <label for="exampleForm2">Category</label>
-                              <input type="text" id="category" class="form-control" name="category" value='{{$price->category}}'>
+                              <input type="text" id="category" class="form-control" name="category" value='{{$medicine->category}}'>
                           </div>
                         </div>
 
                         <div class="row">
                           <div class="col-sm-4">
                               <label for="exampleForm2">Selling Price</label>
-                              <input type="text" id="sellingPrice" class="form-control" name="price" value='{{$price->price}}'>
+                              <input type="text" id="sellingPrice" class="form-control" name="medicine" value='{{$medicine->edit}}'>
                           </div>
                          </div>
                        <div class="row">
                           <div class="col-sm-4">
                               <label for="exampleForm2">Generic Name</label>
-                              <input type="text" id="genericName" class="form-control" name="genericName" value='{{$price->genericName}}'>
+                              <input type="text" id="genericName" class="form-control" name="genericName" value='{{$medicine->genericName}}'>
                           </div>
                           <div class="col-sm-4">
                               <label for="exampleForm2">Company Name</label>
-                              <input type="text" id="companyName" class="form-control" name="companyName" value='{{$price->companyName}}'>
+                              <input type="text" id="companyName" class="form-control" name="companyName" value='{{$medicine->companyName}}'>
                           </div>
                           <div class="col-sm-4">
                               <label for="exampleForm2">Effects</label>
-                              <input type="text" id="effects" class="form-control" name="sideEffects" value='{{$price->sideEffects}}'>
+                              <input type="text" id="effects" class="form-control" name="sideEffects" value='{{$medicine->sideEffects}}'>
                           </div>
                         </div>
                         

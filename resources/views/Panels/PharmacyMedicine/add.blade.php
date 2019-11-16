@@ -3,7 +3,7 @@
 
 @include('Layouts.verticalSideBar')
 
-<form class="form-horizontal" method="POST"  action="{{ route('inventory.store') }}">
+<form class="form-horizontal" method="POST"  action="{{ route('pharmacyMedicine.store') }}">
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 {!!csrf_field()!!}
 <div class="content-container">
@@ -22,8 +22,8 @@
                                             
                                     <label for="exampleForm2">Select </label>
                                     <select   name="priceId" id="priceId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    @foreach ($price as $prices)
-                                        <option value="{{$prices->id}}">{{$prices->name}}</option>
+                                    @foreach ($medicine as $medicines)
+                                        <option value="{{$medicines->id}}">{{$medicines->name}}</option>
                                     @endforeach     
                                     </select>
                                     

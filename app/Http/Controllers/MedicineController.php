@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Price;
+use App\Medicine;
 use Illuminate\Http\Request;
-use App\Inventory;
+use App\PharmacyMedicine;
 
 
-class PriceController extends Controller
+class MedicineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,8 @@ class PriceController extends Controller
     public function index()
     {
         //
-        $price = Price::latest()->get();
-        return view('Panels.Price.index',compact("price"));
+        $medicine = Medicine::latest()->get();
+        return view('Panels.Medicine.index',compact("medicine"));
     }
 
     /**
@@ -29,7 +29,7 @@ class PriceController extends Controller
     public function create()
     {
         //
-        return view('Panels.Price.add');
+        return view('Panels.Medicine.add');
     }
 
     /**
@@ -41,34 +41,34 @@ class PriceController extends Controller
     public function store(Request $request)
     {
         //
-        $price=Price::create($request->all());
-        return redirect()->route('price.index');
+        $medicine=Medicine::create($request->all());
+        return redirect()->route('medicine.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Price  $price
+     * @param  \App\Medicine  $Medicine
      * @return \Illuminate\Http\Response
      */
-    public function show(Price $price, Inventory $inventory)
+    public function show($id)
     {
         //
-        $price=Price::latest()->get();
-        $inventory=Inventory::latest()->get();
-        return view('Panels.Price.show',compact("price","inventory"));
+        $pharmacyMedicine = PharmacyMedicine::where('priceId','=',$id)->latest()->get();
+        $medicine = Medicine::where('id','=',$id)->latest()->get();
+        return view('Panels.Medicine.show',compact("medicine","pharmacyMedicine"));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Price  $price
+     * @param  \App\Medicine  $Medicine
      * @return \Illuminate\Http\Response
      */
-    public function edit(Price $price)
+    public function edit(Medicine $medicine)
     {
         //
-        return view('Panels.Price.edit',compact("price"));
+        return view('Panels.Medicine.edit',compact("medicine"));
     
     }
 
@@ -76,27 +76,27 @@ class PriceController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Price  $price
+     * @param  \App\Medicine  $Medicine
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Price $price)
+    public function update(Request $request, Medicine $medicine)
     {
         //
-        $price->update($request->all());
-        return redirect()->route('price.index');
+        $medicine->update($request->all());
+        return redirect()->route('medicine.index');
        
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Price  $price
+     * @param  \App\Medicine  $Medicine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Price $price)
+    public function destroy(Medicine $medicine)
     {
         //
-        $price->delete();
-        return redirect()->route('price.index');
+        $medicine->delete();
+        return redirect()->route('medicine.index');
     }
 }

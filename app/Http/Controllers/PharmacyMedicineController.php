@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Inventory;
+use App\PharmacyMedicine;
 use Illuminate\Http\Request;
-use App\Price;
+use App\Medicine;
 
-class InventoryController extends Controller
+class PharmacyMedicineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,9 @@ class InventoryController extends Controller
     public function index()
     {
         //
-        $price=Price::latest()->get();
-        return view('Panels.Price.index',compact("price"));
+        $pharmacyMedicine=PharmacyMedicine::latest()->get();
+        $medicine=Medicine::latest()->get();
+        return view('Panels.PharmacyMedicine.index',compact("medicine","pharmacyMedicine"));
     }
 
     /**
@@ -25,11 +26,11 @@ class InventoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Price $price)
+    public function create(Medicine $medicine)
     {
         //
-        $price=Price::latest()->get();
-        return view('Panels.Inventory.add',compact("price"));
+        $medicine=Medicine::latest()->get();
+        return view('Panels.PharmacyMedicine.add',compact("medicine"));
 
     }
 
@@ -42,17 +43,17 @@ class InventoryController extends Controller
     public function store(Request $request)
     {
         //
-        $inventory=Inventory::create($request->all());
-        return redirect()->route('inventory.index');
+        $pharmacyMedicine=PharmacyMedicine::create($request->all());
+        return redirect()->route('pharmacyMedicine.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Inventory  $inventory
+     * @param  \App\PharmacyMedicine  $PharmacyMedicine
      * @return \Illuminate\Http\Response
      */
-    public function show(Inventory $inventory, Price $price)
+    public function show(PharmacyMedicine $PharmacyMedicine)
     {
         //
         
@@ -62,10 +63,10 @@ class InventoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Inventory  $inventory
+     * @param  \App\PharmacyMedicine  $PharmacyMedicine
      * @return \Illuminate\Http\Response
      */
-    public function edit(Inventory $inventory)
+    public function edit(PharmacyMedicine $PharmacyMedicine)
     {
         //
     }
@@ -74,10 +75,10 @@ class InventoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Inventory  $inventory
+     * @param  \App\PharmacyMedicine  $PharmacyMedicine
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Inventory $inventory)
+    public function update(Request $request, PharmacyMedicine $PharmacyMedicine)
     {
         //
     }
@@ -85,10 +86,10 @@ class InventoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Inventory  $inventory
+     * @param  \App\PharmacyMedicine  $PharmacyMedicine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Inventory $inventory)
+    public function destroy(PharmacyMedicine $PharmacyMedicine)
     {
         //
     }
