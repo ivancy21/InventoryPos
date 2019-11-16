@@ -17,10 +17,10 @@
     </div>
     
     <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-            <button type="submit" onclick="window.location='{{route('price.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
+            <button type="submit" onclick="window.location='{{route('medicine.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
     <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'ProdList')">Product List</button>
-            <button class="tablinks" onclick="openTab(event, 'ProdHistory')">History</button>
+            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Product List</button>
+            <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
            
 
     </div>
@@ -34,18 +34,16 @@
     <div id="ProdList" class="tabcontent" style="display:block;">
         <div class="DivTemplate">
             <div class="table-responsive">
+                
                 <table id="TblSorter1" class="table table-hover  table-borderless dataDisplayer " cellspacing="0" width="100%">
                     <thead  class="thead-bg table-bordered">
                         <tr class="text-center">
                                 <th class="th-sm tblheadfont1">Product Code </th>
                                 <th class="th-sm tblheadfont1">Name </th>
-                                <th class="th-sm tblheadfont1">Category </th>
-                                <th class="th-sm tblheadfont1">Selling Price </th>
-                                <th class="th-sm tblheadfont1">Generic Name </th>
-                                <th class="th-sm tblheadfont1">Company Name </th>
-                                <th class="th-sm tblheadfont1">Side Effects </th>
+                                <th class="th-sm tblheadfont1">Date Created </th>
+                                <th class="th-sm tblheadfont1">Date Expired </th>
+                                <th class="th-sm tblheadfont1"> Date Received </th>
                                 <th class="th-sm tblheadfont1" >Quantity </th>
-                                <th class="th-sm tblheadfont1" >Option </th>
                                 
                         </tr>
                     </thead>
@@ -53,17 +51,22 @@
                         <tbody>
                             <tr class="text-center">
                               
-                                    <td class="cnterAlgn">{{$price->productCode}}</td>
-                                    <td class="cnterAlgn">{{$price->name}}</td>
-                                    <td class="cnterAlgn">{{$price->category}}</td>
-                                    <td class="cnterAlgn">{{$price->price}}</td>
-                                    <td class="cnterAlgn">{{$price->genericName}}</td>
-                                    <td class="cnterAlgn">{{$price->companyName}}</td>
-                                    <td class="cnterAlgn">{{$price->sideEffects}}</td>
-                        
+                                    @foreach($pharmacyMedicine as $pharmacyMedicines)
+                                     @foreach($medicine as $medicines)
+                                     @if($medicines->id == $pharmacyMedicines->priceId)
+                                        <td class="cnterAlgn">{{$medicines->productCode}}</td>
+                                            <td class="cnterAlgn">{{$medicines->name}}</td>
+                                            <td class="cnterAlgn">{{$pharmacyMedicines->dateCreated}}</td>
+                                            <td class="cnterAlgn">{{$pharmacyMedicines->dateExpiry}}</td>
+                                            <td class="cnterAlgn">{{$pharmacyMedicines->dateReceived}}</td>
+                                            <td class="cnterAlgn">{{$pharmacyMedicines->quantity}}</td>
+                                            @endif
+                                {{-- <p>{{$medicine->pharmacyMedicines->quantity}}</p> --}}
                             </tr>
+                            @endforeach
+                            @endforeach         
                               
-                        
+                              
                         </tbody>
                         
                     </table>

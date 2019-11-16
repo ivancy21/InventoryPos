@@ -3,7 +3,7 @@
 
 @include('Layouts.verticalSideBar')
 
-<form class="form-horizontal" method="POST" action="{{route('price.store')}}">
+<form class="form-horizontal" method="POST" action="{{route('medicine.store')}}">
  @csrf
     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 <div class="content-container">

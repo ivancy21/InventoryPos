@@ -15,16 +15,16 @@
     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
     <span class="HeaderBannerText">Products</span>
     </div>
-    
     <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-            <button type="submit" onclick="window.location='{{route('price.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
+            <button type="submit" onclick="window.location='{{route('medicine.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
     <div class="tab">
-            <button class="tablinks" onclick="openTab(event, 'ProdList')">Product List</button>
-            <button class="tablinks" onclick="openTab(event, 'ProdHistory')">History</button>
-           
-
-    </div>
+            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Product List</button>
+            <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
     
+          
+        
+    </div>
+   
 </div>
 
 
@@ -52,23 +52,23 @@
 
                         <tbody>
                             <tr class="text-center">
-                                @foreach($price as $prices)
-                                    <td class="cnterAlgn">{{$prices->productCode}}</td>
-                                    <td class="cnterAlgn">{{$prices->name}}</td>
-                                    <td class="cnterAlgn">{{$prices->category}}</td>
-                                    <td class="cnterAlgn">{{$prices->price}}</td>
-                                    <td class="cnterAlgn">{{$prices->genericName}}</td>
-                                    <td class="cnterAlgn">{{$prices->companyName}}</td>
-                                    <td class="cnterAlgn">{{$prices->sideEffects}}</td>
-                            <td class="cnterAlgn">{{ $prices->inventories->sum('quantity') }}</td>
+                                @foreach($medicine as $medicines)
+                                    <td class="cnterAlgn">{{$medicines->productCode}}</td>
+                                    <td class="cnterAlgn">{{$medicines->name}}</td>
+                                    <td class="cnterAlgn">{{$medicines->category}}</td>
+                                    <td class="cnterAlgn">{{$medicines->price}}</td>
+                                    <td class="cnterAlgn">{{$medicines->genericName}}</td>
+                                    <td class="cnterAlgn">{{$medicines->companyName}}</td>
+                                    <td class="cnterAlgn">{{$medicines->sideEffects}}</td>
+                            <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}</td>
                                     <td class="cnterAlgn"><div class="btn-group">
                                         <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Action
                                         </button>
                                         <div class="dropdown-menu">
-                                        <button class="dropdown-item" onclick="window.location='{{route('price.edit',$prices->id)}}'"> <i class="fa fa-edit"></i> Edit</button>   
-                                        <button class="dropdown-item" onclick="window.location='{{route('price.show',$prices->id)}}'">Quantity/Date History</button>   
-                                        <form method="POST" action="{{ route('price.destroy', $prices->id) }}">
+                                        <button class="dropdown-item" onclick="window.location='{{route('medicine.edit',$medicines->id)}}'"> <i class="fa fa-edit"></i> Edit</button>   
+                                        <button class="dropdown-item" onclick="window.location='{{route('medicine.show',$medicines->id)}}'">History</button>   
+                                        <form method="POST" action="{{ route('medicine.destroy', $medicines->id) }}">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="dropdown-item" > <i class="fa fa-trash-alt"></i> remove</button>                   

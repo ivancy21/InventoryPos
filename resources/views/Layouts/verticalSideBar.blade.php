@@ -10,18 +10,12 @@
             </a>
           </li>
           <li>
-            <a href="{{route('price.index')}}">
+            <a href="{{route('medicine.index')}}">
                <i class="fa fa-capsules" aria-hidden="true"></i>Medicine List
             </a>
           </li>
           <li>
-            <a href="{{route('price.create')}}">
-                <i class="fa fa-align-justify" aria-hidden="true"></i>Add Medicine
-            </a>
-          </li>
-      
-          <li>
-              <a href="{{route('inventory.create')}}">
+              <a href="{{route('pharmacyMedicine.create')}}">
                   <i class="fa fa-align-justify" aria-hidden="true"></i>Add Pharmacy Medicine
               </a>
           </li>

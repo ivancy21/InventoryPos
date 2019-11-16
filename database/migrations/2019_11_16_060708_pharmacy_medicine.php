@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class InventoryTable extends Migration
+class PharmacyMedicine extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class InventoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('Inventory', function (Blueprint $table) {
+        Schema::create('PharmacyMedicine', function (Blueprint $table) {
             $table->increments('id');
             $table->Unsignedinteger('priceId');
             $table->integer('quantity');
-            $table->string('dateReceived');
-            $table->string('dateCreated');
-            $table->string('dateExpiry');
+            $table->date('dateReceived');
+            $table->date('dateCreated');
+            $table->date('dateExpiry');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class InventoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Inventory');
+        Schema::dropIfExists('PharmacyMedicine');
     }
 }

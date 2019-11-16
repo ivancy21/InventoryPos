@@ -22,8 +22,8 @@ Route::get('/productList', function () {
 Route::get('/', function () {
     return view('Panels.homePage');
 });
-Route::resource('price','PriceController');
-Route::resource('inventory','InventoryController');
+Route::resource('medicine','MedicineController');
+Route::resource('pharmacyMedicine','PharmacyMedicineController');
 Route::get('addProducts','MedicineListController@index')->name('addProducts');
 Route::get('addProducts/getdata','MedicineListController@getdata')->name('addProducts.getdata');
 Route::post('addProducts/postdata','MedicineListController@postdata')->name('addProducts.postdata');
