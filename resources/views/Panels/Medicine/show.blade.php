@@ -13,13 +13,13 @@
 {{-- Side Nav --}}
     <div class="d-flex flex-column">
     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-    <span class="HeaderBannerText">Products</span>
+    <span class="HeaderBannerText">History</span>
     </div>
     
     <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
             <button type="submit" onclick="window.location='{{route('medicine.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
     <div class="tab">
-            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Product List</button>
+            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
             <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
     
 
@@ -40,12 +40,12 @@
                         <tr class="text-center">
                                 <th class="th-sm tblheadfont1">Product Code </th>
                                 <th class="th-sm tblheadfont1">Name </th>
+                                <th class="th-sm tblheadfont1">Purchased Price </th>
                                 <th class="th-sm tblheadfont1">Selling Price </th>
                                 <th class="th-sm tblheadfont1">Date Created </th>
                                 <th class="th-sm tblheadfont1">Date Expired </th>
                                 <th class="th-sm tblheadfont1"> Date Received </th>
                                 <th class="th-sm tblheadfont1" >Quantity </th>
-                                <th class="th-sm tblheadfont1" >Option </th>
                                 
                         </tr>
                     </thead>
@@ -53,22 +53,16 @@
                         <tbody>
                             <tr class="text-center">
                                 @foreach($pharmacyMedicine as $pharmacyMedicines)
-                                @foreach($medicine as $medicines)
-                              
-                                    
-                                        <td class="cnterAlgn">{{$medicines->productCode}}</td>
-                                            <td class="cnterAlgn">{{$medicines->name}}</td>
-                                            <td class="cnterAlgn">{{$medicines->price}}</td>
-                                            <td class="cnterAlgn">{{$pharmacyMedicines->dateCreated}}</td>
-                                            <td class="cnterAlgn">{{$pharmacyMedicines->dateExpiry}}</td>
-                                            <td class="cnterAlgn">{{$pharmacyMedicines->dateReceived}}</td>
-                                            <td class="cnterAlgn">{{$pharmacyMedicines->quantity}}</td>
-                                            <td class="cnterAlgn"></td>
-                  
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->medicine->productCode}}</td>
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->medicine->name}}</td>
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->purchasedPrice}}</td>
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->medicine->price}}</td>
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->dateCreated}}</td>
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->dateExpiry}}</td>
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->dateReceived}}</td>
+                                        <td class="cnterAlgn">{{$pharmacyMedicines->quantity}}</td>
                             </tr>
-                            @endforeach
-                            @endforeach         
-                              
+                                @endforeach
                               
                         </tbody>
                         

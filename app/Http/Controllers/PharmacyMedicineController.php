@@ -19,6 +19,7 @@ class PharmacyMedicineController extends Controller
         $pharmacyMedicine=PharmacyMedicine::latest()->get();
         $medicine=Medicine::latest()->get();
         return view('Panels.PharmacyMedicine.index',compact("medicine","pharmacyMedicine"));
+
     }
 
     /**
@@ -53,9 +54,12 @@ class PharmacyMedicineController extends Controller
      * @param  \App\PharmacyMedicine  $PharmacyMedicine
      * @return \Illuminate\Http\Response
      */
-    public function show(PharmacyMedicine $PharmacyMedicine)
+    public function show($id)
     {
         //
+        $pharmacyMedicine = PharmacyMedicine::where('medicineId','=',$id)->latest()->get();
+        $medicine = Medicine::where('id','=',$id)->latest()->get();
+        return view('Panels.PharmacyMedicine.show',compact("medicine","pharmacyMedicine"));
         
         
     }
@@ -93,4 +97,6 @@ class PharmacyMedicineController extends Controller
     {
         //
     }
+
+   
 }

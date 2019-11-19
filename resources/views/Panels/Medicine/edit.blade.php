@@ -12,7 +12,7 @@
         <div class="container-fluid">
 
     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-        <span class="HeaderBannerText">Add Products</span>
+        <span class="HeaderBannerText">Edit Medicine</span>
     </div>
           <div class="DivTemplate">
               <div class="container container-fluid">
@@ -34,7 +34,7 @@
                         <div class="row">
                           <div class="col-sm-4">
                               <label for="exampleForm2">Selling Price</label>
-                              <input type="text" id="sellingPrice" class="form-control" name="medicine" value='{{$medicine->edit}}'>
+                              <input type="text" id="sellingPrice" class="form-control" name="price" value='{{$medicine->price}}'>
                           </div>
                          </div>
                        <div class="row">

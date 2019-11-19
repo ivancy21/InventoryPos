@@ -12,11 +12,11 @@
       
     <div class="d-flex flex-column">
     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-    <span class="HeaderBannerText">Products</span>
+    <span class="HeaderBannerText">Medicine List</span>
     </div>
     <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
             <div class="tab">
-            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Product List</button>
+            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
             <button class="tablinks" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
             <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>
   
@@ -44,7 +44,7 @@
                                 <th class="th-sm tblheadfont1">Company Name </th>
                                 <th class="th-sm tblheadfont1">Side Effects </th>
                                 <th class="th-sm tblheadfont1" >Quantity </th>
-                                <th class="th-sm tblheadfont1">Add Details </th>
+                                <th class="th-sm tblheadfont1">History </th>
                                 <th class="th-sm tblheadfont1" >Option </th>
                                 
                         </tr>

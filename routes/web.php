@@ -25,6 +25,7 @@ Route::get('/payment', function () {
 Route::get('/pos', function () {
     return view('Panels.Pos.index');
 });
+Route::resource('pos','PosController');
 Route::resource('medicine','MedicineController');
 Route::resource('pharmacyMedicine','PharmacyMedicineController');
 Route::get('addProducts','MedicineListController@index')->name('addProducts');
