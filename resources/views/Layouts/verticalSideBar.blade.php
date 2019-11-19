@@ -17,7 +17,7 @@
           </li>
           <li>
               <a href="{{route('pharmacyMedicine.create')}}">
-                  <i class="fa fa-align-justify" aria-hidden="true"></i>Add Pharmacy Medicine
+                  <i class="fa fa-align-justify" aria-hidden="true"></i>Add Quantity
               </a>
           </li>
           <li>
