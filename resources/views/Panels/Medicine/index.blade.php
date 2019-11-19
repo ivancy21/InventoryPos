@@ -12,13 +12,13 @@
       
     <div class="d-flex flex-column">
     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-    <span class="HeaderBannerText">Medicine List</span>
+    <span class="HeaderBannerText">Medicines</span>
     </div>
     <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
             <div class="tab">
             <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
             <button class="tablinks" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
-            <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>
+            <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"  data-toggle="tooltip" title="Add Medicine"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>
   
           
         
@@ -49,7 +49,7 @@
                                 <th class="th-sm tblheadfont1">Company Name </th>
                                 <th class="th-sm tblheadfont1">Side Effects </th>
                                 <th class="th-sm tblheadfont1" >Quantity </th>
-                                <th class="th-sm tblheadfont1">History </th>
+                                <th class="th-sm tblheadfont1">Add Details </th>
                                 <th class="th-sm tblheadfont1" >Option </th>
                                 
                         </tr>
@@ -65,8 +65,7 @@
                                     <td class="cnterAlgn">{{$medicines->genericName}}</td>
                                     <td class="cnterAlgn">{{$medicines->companyName}}</td>
                                     <td class="cnterAlgn">{{$medicines->sideEffects}}</td>
-                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }} 
-                                    <a onclick="window.location='{{route('pharmacyMedicine.show',$medicines->id)}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus-circle"></i></a>
+                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}  <a onclick="window.location='{{route('pharmacyMedicine.show',$medicines->id)}}'" style="float:right; color:#00a1db;" data-toggle="tooltip" title="Add Quantity"><i class="fas fa-plus-circle"></i></a>
                                     </td>
                                     <td class="cnterAlgn"><button class="btn btn-info btn-sm" onclick="window.location='{{route('medicine.show',$medicines->id)}}'"><i class="far fa-eye"></i> View</button>   
                                     </td>
@@ -117,11 +116,7 @@
 
     $(document).ready( function () {
     $('#TblSorter1').DataTable();
-    $('#TblSorter2').DataTable();
     });
-
-    
-    
 
     function openTab(evt, TabName) {
         var i, tabcontent, tablinks;

@@ -244,6 +244,9 @@ a.navigation:hover, .dropdown:hover .dropbtn {
 .mr-6{
   margin-right:100px;
 }
+.w-btn{
+ width:200px;
+}
 
 .cnt{
   justify-content:center;
