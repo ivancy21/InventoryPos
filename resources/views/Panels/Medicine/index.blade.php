@@ -10,17 +10,16 @@
         <div class="container-fluid">
 
       
-{{-- Side Nav --}}
     <div class="d-flex flex-column">
     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
     <span class="HeaderBannerText">Products</span>
     </div>
     <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-            <button type="submit" onclick="window.location='{{route('medicine.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
-    <div class="tab">
+            <div class="tab">
             <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Product List</button>
-            <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
-    
+            <button class="tablinks" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
+            <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>
+  
           
         
     </div>
@@ -45,6 +44,7 @@
                                 <th class="th-sm tblheadfont1">Company Name </th>
                                 <th class="th-sm tblheadfont1">Side Effects </th>
                                 <th class="th-sm tblheadfont1" >Quantity </th>
+                                <th class="th-sm tblheadfont1">Add Details </th>
                                 <th class="th-sm tblheadfont1" >Option </th>
                                 
                         </tr>
@@ -60,14 +60,16 @@
                                     <td class="cnterAlgn">{{$medicines->genericName}}</td>
                                     <td class="cnterAlgn">{{$medicines->companyName}}</td>
                                     <td class="cnterAlgn">{{$medicines->sideEffects}}</td>
-                            <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}</td>
+                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}</td>
+                                    <td class="cnterAlgn"><button class="btn btn-info btn-sm" onclick="window.location='{{route('medicine.show',$medicines->id)}}'"><i class="far fa-eye"></i> View</button>   
+                                    </td>
+                                        
                                     <td class="cnterAlgn"><div class="btn-group">
                                         <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Action
                                         </button>
                                         <div class="dropdown-menu">
                                         <button class="dropdown-item" onclick="window.location='{{route('medicine.edit',$medicines->id)}}'"> <i class="fa fa-edit"></i> Edit</button>   
-                                        <button class="dropdown-item" onclick="window.location='{{route('medicine.show',$medicines->id)}}'">History</button>   
                                         <form method="POST" action="{{ route('medicine.destroy', $medicines->id) }}">
                                                                 @csrf
                                                                 @method('DELETE')
@@ -87,49 +89,12 @@
                 </div>
                     </div>
                 </div>
-                            
-                                
-{{-- Modal Delete --}}
-                                
-        <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
-                        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                        <div class="modal-body mx-3">
-                        <p class="text-center h4">Are you sure to delete selected row?</p>
-
-                        </div>
-                    <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
-                        <button type="button" class="btn btn-danger btnYesClass" id="btnYes" data-dismiss="modal">Yes</button>
-                        <button type="button" class="btn btn-primary btnNoClass" id="btnNo" data-dismiss="modal">No</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-                  
-                                      
-
-
-
 
 
       </div>   
     </div>
   </div>
-</div>
+
 
 
 
