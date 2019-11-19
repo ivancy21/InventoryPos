@@ -1,125 +1,142 @@
 @extends('Layouts.master')
 @section('content')
 
+@include('Layouts.verticalSideBar')
 
 
 
-<div class="d-flex flex-column col-sm-12">
-<div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-        <span class="HeaderBannerText">Pos</span>
-        </div>
- </div>
+<div class="content-container">
       
-    <div class="container-fluid ">
-        <div class="row">         
-                <div class="col-sm-8">
-                        <div class="DivTemplate">
-                                <div class="table-responsive">
-                                    <table id="tbl1" class="table table-hover  table-borderless dataDisplayer " cellspacing="0" width="100%">
-                                        <thead  class="thead-bg table-bordered">
-                                            <tr class="text-center">
-                                                    <th class="th-sm tblheadfont1">Product Code </th>
-                                                    <th class="th-sm tblheadfont1">Name </th>
-                                                    <th class="th-sm tblheadfont1">Category </th>
-                                                    <th class="th-sm tblheadfont1">Selling Price </th>
-                                                    <th class="th-sm tblheadfont1">Generic Name </th>
-                                                    <th class="th-sm tblheadfont1">Company Name </th>
-                                                    <th class="th-sm tblheadfont1">Side Effects </th>
-                                                    <th class="th-sm tblheadfont1" >Quantity </th>
-                                                    <th class="th-sm tblheadfont1" >Option </th>
-                                                    
-                                            </tr>
-                                        </thead>
-                    
-                                            <tbody>
-                                                <tr class="text-center">
-                                                  
-                                                        <td class="cnterAlgn">ASDASD</td>
-                                                        <td class="cnterAlgn">ASDAS</td>
-                                                        <td class="cnterAlgn">ASD</td>
-                                                        <td class="cnterAlgn">ASD</td>
-                                                        <td class="cnterAlgn">ASD</td>
-                                                        <td class="cnterAlgn">ASD</td>
-                                                        <td class="cnterAlgn">ASD</td>
-                                                        <td class="cnterAlgn">ASD</td>
-                                                        <td class="cnterAlgn">ASD</td>
-                                                </tr>
-                                                  
-                                            
-                                            </tbody>
-                                            
-                                        </table>
-                                </div>
-                        </div>       
-                </div>
-        
+        <div class="container-fluid">
 
-                                <div class="col-sm-4">
-                                        <div class="DivTemplate" >
-                                                <div class="table-responsive">
-                                                    <table class="table table-borderless">
-                                                            <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">First</th>
-                                                                <th scope="col">Last</th>
-                                                                <th scope="col">Handle</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <th scope="row">1</th>
-                                                                <td>Mark</td>
-                                                                <td>Otto</td>
-                                                                <td>@mdo</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">2</th>
-                                                                <td>Jacob</td>
-                                                                <td>Thornton</td>
-                                                                <td>@fat</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">3</th>
-                                                                <td colspan="2">Larry the Bird</td>
-                                                                <td>@twitter</td>
-                                                            </tr>
-                                                            <tr>
-                                                                    <th scope="row">3</th>
-                                                                    <td colspan="2">Larry the Bird</td>
-                                                                    <td>@twitter</td>
-                                                                </tr>
-                                                                <tr>
-                                                                        <th scope="row">3</th>
-                                                                        <td colspan="2">Larry the Bird</td>
-                                                                        <td>@twitter</td>
-                                                                    </tr>
-                                                            </tbody>
-                                                        </table>
-                                                </div>
-                                        </div>
-                        
-                                                <div class="DivTemplate" >
-                                                    <div class="DivHeaderText">Total : $100000  <a type="button" href="/payment" class="btn btn-info btn-sm" style="float:right;">Payment</a></div>
-                                                    <div class="hr mt-2"></div>
-
-                                                </div>
-
-                    </div>
-            </div>
-            
+      
+{{-- Side Nav --}}
+    <div class="d-flex flex-column">
+    <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
+    <span class="HeaderBannerText">POS</span>
     </div>
-                        
+    
+    <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
+            
+    <div class="tab">
+            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
+            <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
+           
 
-              
+    </div>
+    
+</div>
+
+
+
+{{-- Product List Template --}}
+
+    <div id="ProdList" class="tabcontent" style="display:block;">
+        <div class="DivTemplate">
+            <div class="table-responsive">
+                
+                <table id="TblSorter1" class="table table-hover  table-borderless dataDisplayer " cellspacing="0" width="100%">
+                    <thead  class="thead-bg table-bordered">
+                        <tr class="text-center">
+                                <th class="th-sm tblheadfont1">Product Code </th>
+                                <th class="th-sm tblheadfont1">Name </th>
+                                <th class="th-sm tblheadfont1">Price </th>
+                                <th class="th-sm tblheadfont1">Generic Name </th>
+                                <th class="th-sm tblheadfont1">Company Name</th>
+                                <th class="th-sm tblheadfont1" >Category</th>
+                                <th class="th-sm tblheadfont1" >Quantity</th>
+                                
+                        </tr>
+                    </thead>
+
+                        <tbody>
+                            <tr class="text-center">
+                              
+                                @foreach($medicine as $medicines)
+                                    <td class="cnterAlgn">{{$medicines->productCode}}</td>
+                                    <td class="cnterAlgn">{{$medicines->name}}</td>
+                                    <td class="cnterAlgn">{{$medicines->price}}</td>
+                                    <td class="cnterAlgn">{{$medicines->genericName}}</td>
+                                    <td class="cnterAlgn">{{$medicines->companyName}}</td>
+                                    <td class="cnterAlgn">{{$medicines->category}}</td>
+                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}</td>
+                                {{-- <p>{{$medicine->pharmacyMedicines->quantity}}</p> --}}
+                            </tr>
+                            @endforeach         
+                              
+                              
+                        </tbody>
+                        
+                    </table>
+                </div>
+                    </div>
+                </div>
+                            
+                                
+{{-- Modal Delete --}}
+                                
+        <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
+                        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                        <div class="modal-body mx-3">
+                        <p class="text-center h4">Are you sure to delete selected row?</p>
+
+                        </div>
+                    <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
+                        <button type="button" class="btn btn-danger btnYesClass" id="btnYes" data-dismiss="modal">Yes</button>
+                        <button type="button" class="btn btn-primary btnNoClass" id="btnNo" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      </div>   
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 <script>
-  $(document).ready( function () {
-    $('#tbl1').DataTable();
-   
+
+    $(document).ready( function () {
+    $('#TblSorter1').DataTable();
+    $('#TblSorter2').DataTable();
     });
 
-    </script>
+    
+    
 
+    function openTab(evt, TabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(TabName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+
+
+</script>
 
 @endsection

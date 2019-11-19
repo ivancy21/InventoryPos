@@ -13,7 +13,7 @@ class Medicine extends Model
     ];
     public function pharmacyMedicines()
     {
-        return $this->hasMany(PharmacyMedicine::class, 'priceId');
+        return $this->hasMany(PharmacyMedicine::class, 'medicineId');
     }
 
  
