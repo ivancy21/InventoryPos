@@ -32,6 +32,7 @@ class PosController extends Controller
     public function create()
     {
         //
+        return view('Panels.Pos.add');
     }
 
     /**
@@ -51,9 +52,11 @@ class PosController extends Controller
      * @param  \App\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function show(Pos $pos)
+    public function show(PharmacyMedicine $pharmacyMedicine)
     {
         //
+       
+        
     }
 
     /**

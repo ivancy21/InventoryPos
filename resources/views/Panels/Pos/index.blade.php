@@ -45,13 +45,11 @@
                                 <th class="th-sm tblheadfont1">Company Name</th>
                                 <th class="th-sm tblheadfont1" >Category</th>
                                 <th class="th-sm tblheadfont1" >Quantity</th>
-                                
+                                <th class="th-sm tblheadfont1" >Purchase</th>
                         </tr>
                     </thead>
-
                         <tbody>
                             <tr class="text-center">
-                              
                                 @foreach($medicine as $medicines)
                                     <td class="cnterAlgn">{{$medicines->productCode}}</td>
                                     <td class="cnterAlgn">{{$medicines->name}}</td>
@@ -60,17 +58,15 @@
                                     <td class="cnterAlgn">{{$medicines->companyName}}</td>
                                     <td class="cnterAlgn">{{$medicines->category}}</td>
                                     <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}</td>
-                                {{-- <p>{{$medicine->pharmacyMedicines->quantity}}</p> --}}
+                                    <td class="cnterAlgn"><button class="btn btn-info btn-sm" onclick="window.location='{{route('pos.create',$medicines->id)}}'"><i class="far fa-add"></i>Add</button>   
+                                </td>
                             </tr>
                             @endforeach         
-                              
-                              
                         </tbody>
-                        
                     </table>
-                </div>
-                    </div>
-                </div>
+            </div>
+        </div>
+    </div>
                             
                                 
 {{-- Modal Delete --}}

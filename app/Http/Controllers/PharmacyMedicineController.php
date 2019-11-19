@@ -19,7 +19,6 @@ class PharmacyMedicineController extends Controller
         $pharmacyMedicine=PharmacyMedicine::latest()->get();
         $medicine=Medicine::latest()->get();
         return view('Panels.PharmacyMedicine.index',compact("medicine","pharmacyMedicine"));
-
     }
 
     /**
@@ -45,7 +44,7 @@ class PharmacyMedicineController extends Controller
     {
         //
         $pharmacyMedicine=PharmacyMedicine::create($request->all());
-        return redirect()->route('pharmacyMedicine.index');
+        return redirect()->route('pharmacyMedicine.index')->with('success','Pharmacy Medicine has been added');
     }
 
     /**
@@ -54,13 +53,13 @@ class PharmacyMedicineController extends Controller
      * @param  \App\PharmacyMedicine  $PharmacyMedicine
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($PharmacyMedicine)
     {
-        //
-        $pharmacyMedicine = PharmacyMedicine::where('medicineId','=',$id)->latest()->get();
-        $medicine = Medicine::where('id','=',$id)->latest()->get();
-        return view('Panels.PharmacyMedicine.show',compact("medicine","pharmacyMedicine"));
         
+        //
+        $pharmacyMedicine=PharmacyMedicine::where('id','=',$PharmacyMedicine)->latest()->first();
+        $medicine=Medicine::where('id','=',$PharmacyMedicine)->latest()->first();
+        return view('Panels.PharmacyMedicine.add',compact("medicine","pharmacyMedicine"));
         
     }
 
@@ -97,6 +96,4 @@ class PharmacyMedicineController extends Controller
     {
         //
     }
-
-   
 }

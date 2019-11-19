@@ -32,6 +32,11 @@
 
     <div id="ProdList" class="tabcontent" style="display:block;">
         <div class="DivTemplate">
+                @if($message = Session::get('success'))
+                <div class="alert alert-success">
+                  <center><p>{{$message}}</p></center>
+              </div>
+            @endif
             <div class="table-responsive">
                 <table id="TblSorter1" class="table table-hover  table-borderless dataDisplayer " cellspacing="0" width="100%">
                     <thead  class="thead-bg table-bordered">
@@ -60,7 +65,8 @@
                                     <td class="cnterAlgn">{{$medicines->genericName}}</td>
                                     <td class="cnterAlgn">{{$medicines->companyName}}</td>
                                     <td class="cnterAlgn">{{$medicines->sideEffects}}</td>
-                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}  <a onclick="window.location='{{route('pharmacyMedicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus-circle"></i></a>
+                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }} 
+                                    <a onclick="window.location='{{route('pharmacyMedicine.show',$medicines->id)}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus-circle"></i></a>
                                     </td>
                                     <td class="cnterAlgn"><button class="btn btn-info btn-sm" onclick="window.location='{{route('medicine.show',$medicines->id)}}'"><i class="far fa-eye"></i> View</button>   
                                     </td>

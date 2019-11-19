@@ -14,6 +14,6 @@ class Pos extends Model
     public function pos()
     {
         return $this->hasMany(PharmacyMedicine::class,'pharmacyMedicineId');
-        return $this->hasMany(Medicine::class,'priceId');
+        
     }
 }
