@@ -60,7 +60,8 @@
                                     <td class="cnterAlgn">{{$medicines->genericName}}</td>
                                     <td class="cnterAlgn">{{$medicines->companyName}}</td>
                                     <td class="cnterAlgn">{{$medicines->sideEffects}}</td>
-                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}</td>
+                                    <td class="cnterAlgn">{{ $medicines->pharmacyMedicines->sum('quantity') }}  <a onclick="window.location='{{route('pharmacyMedicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus-circle"></i></a>
+                                    </td>
                                     <td class="cnterAlgn"><button class="btn btn-info btn-sm" onclick="window.location='{{route('medicine.show',$medicines->id)}}'"><i class="far fa-eye"></i> View</button>   
                                     </td>
                                         
