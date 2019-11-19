@@ -11,7 +11,7 @@
  <div class="content-container container align-middle">
    
             <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-                <span class="HeaderBannerText">Add Items</span>
+                <span class="HeaderBannerText">Add Pharmacy Medicine</span>
             </div>
               
                  <div class="DivTemplate">
@@ -19,7 +19,7 @@
                         <div class="form-group row cnt mr-6">
                                 <label  class="col-sm-2 col-form-label fnt">Select</label>
                             <div class="col-sm-4">
-                                <select   name="priceId" id="priceId" class="form-control">
+                                <select   name="medicineId" id="medicineId" class="form-control">
                                         @foreach ($medicine as $medicines)
                                             <option value="{{$medicines->id}}">{{$medicines->name}}</option>
                                         @endforeach     
@@ -29,10 +29,17 @@
 
                         <div class="form-group row cnt mr-6">
                                 <label  class="col-sm-2 col-form-label fnt">Quantity</label>
-                            <div class="col-sm-4">
+                        <div class="col-sm-4">
                                     <input type="text" id="quantity" class="form-control" name="quantity" >
-                            </div>
-                      </div>
+                        </div>
+                        </div>
+
+                        <div class="form-group row cnt mr-6">
+                            <label  class="col-sm-2 col-form-label fnt">Purchased Price</label>
+                        <div class="col-sm-4">
+                                    <input type="text" id="purchasedPrice" class="form-control" name="purchasedPrice" >
+                        </div>
+                        </div>
                 
                       <div class="form-group row cnt mr-6">
                             <label  class="col-sm-2 col-form-label fnt">Date Created</label>

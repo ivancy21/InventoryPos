@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Medicine;
+use App\Pos;
 use Illuminate\Http\Request;
 use App\PharmacyMedicine;
+use App\Medicine;
 
-
-class MedicineController extends Controller
+class PosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +17,11 @@ class MedicineController extends Controller
     public function index()
     {
         //
-        $medicine = Medicine::latest()->get();
-        return view('Panels.Medicine.index',compact("medicine"));
+    
+        $pharmacyMedicine=PharmacyMedicine::latest()->get();
+        $medicine=Medicine::latest()->get();
+        return view('Panels.Pos.index',compact("medicine","pharmacyMedicine"));
+        
     }
 
     /**
@@ -29,7 +32,6 @@ class MedicineController extends Controller
     public function create()
     {
         //
-        return view('Panels.Medicine.add');
     }
 
     /**
@@ -41,62 +43,50 @@ class MedicineController extends Controller
     public function store(Request $request)
     {
         //
-        $medicine=Medicine::create($request->all());
-        return redirect()->route('medicine.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Medicine  $Medicine
+     * @param  \App\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pos $pos)
     {
         //
-        $pharmacyMedicine = PharmacyMedicine::where('medicineId','=',$id)->latest()->get();
-        $medicine = Medicine::where('id','=',$id)->latest()->get();
-        return view('Panels.Medicine.show',compact("medicine","pharmacyMedicine"));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Medicine  $Medicine
+     * @param  \App\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medicine $medicine)
+    public function edit(Pos $pos)
     {
         //
-        return view('Panels.Medicine.edit',compact("medicine"));
-    
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Medicine  $Medicine
+     * @param  \App\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medicine $medicine)
+    public function update(Request $request, Pos $pos)
     {
         //
-        $medicine->update($request->all());
-        return redirect()->route('medicine.index');
-       
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Medicine  $Medicine
+     * @param  \App\Pos  $pos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medicine $medicine)
+    public function destroy(Pos $pos)
     {
         //
-        $medicine->delete();
-        return redirect()->route('medicine.index');
     }
 }

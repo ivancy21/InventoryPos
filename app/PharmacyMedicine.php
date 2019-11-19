@@ -11,8 +11,8 @@ class PharmacyMedicine extends Model
     protected $guarded=['id','created_at','updated_at'
 
     ];
-    public function medicines()
+    public function medicine()
     {
-        return $this->belongsTo(Medicine::class,'id');
+        return $this->belongsTo(Medicine::class,'medicineId');
     }
 }
