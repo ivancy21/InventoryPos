@@ -12,17 +12,20 @@
       
 {{-- Side Nav --}}
     <div class="d-flex flex-column">
-    <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-    <span class="HeaderBannerText">History</span>
-    </div>
-    
-    <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-            <button type="submit" onclick="window.location='{{route('medicine.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
-    <div class="tab">
-            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
-            <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
-    </div>
-    </div>
+            <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
+                    <span class="HeaderBannerText">History</span>
+                    </div>
+                    <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
+                            <div class="tab">
+                            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
+                            <button class="tablinks" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
+                            <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>
+                  
+                          
+                        
+                    </div>
+                   
+                </div>
 
 
 
@@ -72,6 +75,13 @@
                 </div>
                     </div>
                 </div>
+
+                <div class="DivTemplate">
+                        <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
+                        <div class="hr mb-2"></div> 
+                        <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location = '{{ route('medicine.index') }}'" value="BACK">    
+                    </div>
+               
 
       </div>   
     </div>

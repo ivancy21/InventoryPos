@@ -15,6 +15,7 @@
                <i class="fa fa-capsules" aria-hidden="true"></i>Medicine List
             </a>
           </li>
+          
           <li>
             <a href="/pos">
                 <i class="fa fa-align-justify" aria-hidden="true"></i>Pos

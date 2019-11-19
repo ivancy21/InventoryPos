@@ -10,23 +10,22 @@
         <div class="container-fluid">
 
       
-{{-- Side Nav --}}
     <div class="d-flex flex-column">
-    <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-    <span class="HeaderBannerText">History</span>
-    </div>
-    
-    <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-            <button type="submit" onclick="window.location='{{route('medicine.create')}}'" class="btn btn-success btn-sm mt-1 mr-2" style="float:right;"> <i class="fa fa-plus-circle"></i> Add Medicine</button>
-    <div class="tab">
-            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
-            <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
-           
-
-    </div>
-    
-</div>
-
+            <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
+                    <span class="HeaderBannerText">History</span>
+                    </div>
+                    <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
+                            <div class="tab">
+                            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
+                            <button class="tablinks" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
+                            <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>
+                  
+                          
+                        
+                    </div>
+                   
+                </div>
+                
 
 
 {{-- Product List Template --}}
@@ -70,49 +69,18 @@
                 </div>
                     </div>
                 </div>
+
+                <div class="DivTemplate">
+                        <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
+                        <div class="hr mb-2"></div> 
+                        <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location = '{{ route('medicine.index') }}'" value="BACK">    
+                    </div>
                             
-                                
-{{-- Modal Delete --}}
-                                
-        <div class="modal fade" id="modalDelete" tabindex="-1" role="dialog" aria-labelledby="modalDelete"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h4 class="modal-title w-100 font-weight-bold ml-5 text-danger">Delete</h4>
-                        <button type="button" class="close text-danger" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                        <div class="modal-body mx-3">
-                        <p class="text-center h4">Are you sure to delete selected row?</p>
-
-                        </div>
-                    <div class="modal-footer d-flex justify-content-center deleteButtonsWrapper">
-                        <button type="button" class="btn btn-danger btnYesClass" id="btnYes" data-dismiss="modal">Yes</button>
-                        <button type="button" class="btn btn-primary btnNoClass" id="btnNo" data-dismiss="modal">No</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-                  
-                                      
-
-
-
-
 
       </div>   
     </div>
   </div>
-</div>
+
 
 
 
@@ -128,7 +96,6 @@
 
     $(document).ready( function () {
     $('#TblSorter1').DataTable();
-    $('#TblSorter2').DataTable();
     });
 
     
