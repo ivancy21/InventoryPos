@@ -1,4 +1,5 @@
-<div class="sidebar-container">
+<div class="sidebar-container " style="width:200px;" id="mySidebar">
+  
         <div class="sidebar-logo">
          Inventory
         </div>
@@ -43,4 +44,3 @@
           </li>
         </ul>
       </div>
-    

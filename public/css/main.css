@@ -233,6 +233,20 @@ a.navigation:hover, .dropdown:hover .dropbtn {
 .cnterAlgn{
   text-align:center; 
   font-family: 'Segoe UI';
+ 
+  }
+
+.fnt{
+  font-family: 'Segoe UI';
+  text-align:right;
+}
+
+.mr-6{
+  margin-right:100px;
+}
+
+.cnt{
+  justify-content:center;
 }
 
 
