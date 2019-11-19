@@ -21,16 +21,22 @@
     <div class="tab">
             <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
             <button class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
-    
-
     </div>
-    
-</div>
+    </div>
 
 
 
 {{-- Product List Template --}}
 
+        <div class="d-flex flex-column">
+        <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
+        <center><span class="HeaderBannerText">Name: <b>{{$medicine->name}}<p></p></b>Product Code: <b>{{$medicine->productCode}}</b></span></center>
+        </div>
+        <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
+        <div class="tab">
+        </div>
+        </div>
+    
     <div id="ProdList" class="tabcontent" style="display:block;">
         <div class="DivTemplate">
             <div class="table-responsive">
@@ -38,8 +44,6 @@
                 <table id="TblSorter1" class="table table-hover  table-borderless dataDisplayer " cellspacing="0" width="100%">
                     <thead  class="thead-bg table-bordered">
                         <tr class="text-center">
-                                <th class="th-sm tblheadfont1">Product Code </th>
-                                <th class="th-sm tblheadfont1">Name </th>
                                 <th class="th-sm tblheadfont1">Purchased Price </th>
                                 <th class="th-sm tblheadfont1">Selling Price </th>
                                 <th class="th-sm tblheadfont1">Date Created </th>
@@ -53,8 +57,6 @@
                         <tbody>
                             <tr class="text-center">
                                 @foreach($pharmacyMedicine as $pharmacyMedicines)
-                                        <td class="cnterAlgn">{{$pharmacyMedicines->medicine->productCode}}</td>
-                                        <td class="cnterAlgn">{{$pharmacyMedicines->medicine->name}}</td>
                                         <td class="cnterAlgn">{{$pharmacyMedicines->purchasedPrice}}</td>
                                         <td class="cnterAlgn">{{$pharmacyMedicines->medicine->price}}</td>
                                         <td class="cnterAlgn">{{$pharmacyMedicines->dateCreated}}</td>

@@ -15,4 +15,9 @@ class PharmacyMedicine extends Model
     {
         return $this->belongsTo(Medicine::class,'medicineId');
     }
+
+    public function pos()
+    {
+        return $this->belongsTo(Pos::class,'pharmacyMedicineId');
+    }
 }

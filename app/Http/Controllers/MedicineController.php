@@ -55,7 +55,7 @@ class MedicineController extends Controller
     {
         //
         $pharmacyMedicine = PharmacyMedicine::where('medicineId','=',$id)->latest()->get();
-        $medicine = Medicine::where('id','=',$id)->latest()->get();
+        $medicine = Medicine::where('id','=',$id)->latest()->first();
         return view('Panels.Medicine.show',compact("medicine","pharmacyMedicine"));
     }
 
@@ -83,7 +83,7 @@ class MedicineController extends Controller
     {
         //
         $medicine->update($request->all());
-        return redirect()->route('medicine.index');
+        return redirect()->route('medicine.index')->with('success','Medicine has been edited');
        
     }
 

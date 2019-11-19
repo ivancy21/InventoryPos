@@ -14,7 +14,6 @@
         <span class="HeaderBannerText">Add Medicine</span>
     </div>
           <div class="DivTemplate">
-             
                     <div class="form-group row cnt mr-6">
                             <label  class="col-sm-2 col-form-label fnt">Medicine Code</label>
                         <div class="col-sm-4">

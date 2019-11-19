@@ -60,8 +60,6 @@
                                             <td class="cnterAlgn">{{$pharmacyMedicines->dateExpiry}}</td>
                                             <td class="cnterAlgn">{{$pharmacyMedicines->dateReceived}}</td>
                                             <td class="cnterAlgn">{{$pharmacyMedicines->quantity}}</td>
-                                    
-                                {{-- <p>{{$medicine->pharmacyMedicines->quantity}}</p> --}}
                             </tr>
                                     @endforeach         
                               
