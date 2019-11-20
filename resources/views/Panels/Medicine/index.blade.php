@@ -38,7 +38,7 @@
               </div>
             @endif
             <div class="table-responsive">
-                <table id="TblSorter1" class="table table-hover  table-borderless dataDisplayer " cellspacing="0" width="100%">
+                <table id="TblSorter1" class="table table-hover  table-borderless dataDisplayer" cellspacing="0" width="100%">
                     <thead  class="thead-bg table-bordered">
                         <tr class="text-center">
                                 <th class="th-sm tblheadfont1">Product Code </th>

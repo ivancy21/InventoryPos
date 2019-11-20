@@ -226,8 +226,6 @@ a.navigation:hover, .dropdown:hover .dropbtn {
 .tblheadfont1{
   font-family:'Segoe UI';
   font-size:11px;
-  text-align:center;
-
 }
 
 .cnterAlgn{
@@ -423,9 +421,21 @@ a.navigation:hover, .dropdown:hover .dropbtn {
 /*th-bg*/
 
 .thead-bg {
-    color: white;
-    background-color: #0996c1;
+  background: -webkit-linear-gradient(left, #0fceca , #0996c1);
+  background: -o-linear-gradient(left, #0fceca, #0996c1);
+  background: -moz-linear-gradient(left, #0fceca, #0996c1);
+  background: linear-gradient(to left, #0fceca , #0996c1);
+  color: white;
+  font-size:8px;
 }
+
+.tr-bg{
+  background: linear-gradient(18deg, rgba(214,219,214,1) 0%, rgba(246,246,246,1) 35%, rgba(239,239,239,1) 97%);
+  font-family: 'Segoe UI';
+  font-weight: bolder;
+  color:rgb(53, 52, 52);
+}
+
 
 /*side bar font size*/
 
@@ -436,4 +446,32 @@ a.navigation:hover, .dropdown:hover .dropbtn {
 
 .pos-h{
   height:650px;
+}
+
+
+
+
+.pwd{
+height:30px;
+width:100px;
+}
+
+.tbw{
+  width:100px!important;
+  margin-top:15px!important;
+}
+
+/*Data displayer css*/
+
+
+.highlight{
+background: linear-gradient(18deg, rgba(214,219,214,1) 0%, rgba(246,246,246,1) 35%, rgba(239,239,239,1) 97%);
+}
+table.dataDisplayer td:nth-child(even), .lblevencolumn {
+  color: #212325;
+  font-weight: bold;
+}
+table.dataDisplayer td:nth-child(odd), .oddrow {
+  color: #676767;
+  font-weight: 600;
 }

@@ -31,3 +31,17 @@ Route::resource('pharmacyMedicine','PharmacyMedicineController');
 Route::get('addProducts','MedicineListController@index')->name('addProducts');
 Route::get('addProducts/getdata','MedicineListController@getdata')->name('addProducts.getdata');
 Route::post('addProducts/postdata','MedicineListController@postdata')->name('addProducts.postdata');
+
+
+Route::get('/MedList', function () {
+    return view('Panels.MedicineList.medListIndex');
+});
+
+
+Route::get('/MedCreate', function () {
+    return view('Panels.MedicineList.medListCreate');
+});
+
+Route::get('/MedShow', function () {
+    return view('Panels.MedicineList.medListShow');
+});
