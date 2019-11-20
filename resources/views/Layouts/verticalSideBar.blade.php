@@ -14,8 +14,7 @@
             <a href="{{route('medicine.index')}}">
                <i class="fa fa-capsules" aria-hidden="true"></i>Medicine List
             </a>
-          </li>
-          
+          </li> 
           <li>
             <a href="/pos">
                 <i class="fa fa-align-justify" aria-hidden="true"></i>Pos
@@ -24,8 +23,8 @@
         
           <li class="header">Another Menu</li>
           <li>
-            <a href="#">
-              <i class="fa fa-users" aria-hidden="true"></i> Friends
+            <a href="/MedList">
+              <i class="fa fa-capsules" aria-hidden="true"></i>Medicine List
             </a>
           </li>
           <li>
