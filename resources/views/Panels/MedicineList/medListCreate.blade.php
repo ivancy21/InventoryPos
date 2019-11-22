@@ -22,7 +22,10 @@
                                   <div class="d-flex justify-content-center">
                                     <div class="btn btn-mdb-color btn-rounded float-left">
                                       <span>Choose file</span>
-                                      <input type="file" onchange="readURL(this);">
+                                      <input type="file" id='medicineImage' onchange="readURL(this);"
+                                      class="form-control{{ $errors->has('medicineImage') ? ' is-invalid' : '' }}"
+                                      name='medicineImage' style="border: none" />
+                                      <input type="hidden" id="medicineImage" name="medicineImage">
                                     </div>
                                   </div>
                                 </div>

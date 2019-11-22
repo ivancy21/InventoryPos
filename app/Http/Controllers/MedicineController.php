@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Medicine;
 use Illuminate\Http\Request;
 use App\PharmacyMedicine;
-
+use Intervention\Image\ImageManagerStatic as Image;
 
 class MedicineController extends Controller
 {
@@ -18,7 +18,7 @@ class MedicineController extends Controller
     {
         //
         $medicine = Medicine::latest()->get();
-        return view('Panels.Medicine.index',compact("medicine"));
+        return view('Panels.Medicine.medListIndex',compact("medicine"));
     }
 
     /**
@@ -29,7 +29,7 @@ class MedicineController extends Controller
     public function create()
     {
         //
-        return view('Panels.Medicine.add');
+        return view('Panels.Medicine.medListCreate');
     }
 
     /**
@@ -41,7 +41,34 @@ class MedicineController extends Controller
     public function store(Request $request)
     {
         //
-        $medicine=Medicine::create($request->all());
+       
+        $medicine = Medicine::create($request->except('medicinePhoto','medicinePic'));
+
+         if ($request->hasFile('medicinePic')){
+            $this->validate($request, [
+                'medicinePic' => 'required|image|mimes:jpeg,png,jpg,gif',
+            ]);
+        //     $filename = time().'.'.$request->medicinePic->getClientOriginalExtension();
+        //     $resizedImage = Image::make($request->file('medicinePic')->getRealPath());
+        //     $resizedImage->resize(100, 100);
+        //     $user->medicinePic = $filename;
+        //     $resizedImage->save(public_path().'/images/userPhotos/' .  $filename);
+        //     $user->save(); 
+        //     $alert = $filename;
+        } 
+       
+        if ($request->input('medicinePhoto') != NULL){
+            $screen = $request->input('medicinePhoto');
+            $filterd_data = substr($screen, strpos($screen, ",")+1);
+            //Decode the string
+            $unencoded_data=base64_decode($filterd_data);
+            $name = time().'.png';
+            $medicinePhoto = Image::make($unencoded_data);
+            $medicinePhoto->save(public_path().'/images/medicinePhotos/' .  $name);
+            $medicine->medicinePhoto = $name;
+            $medicine->save();
+        }               
+
         return redirect()->route('medicine.index');
     }
 
@@ -55,8 +82,9 @@ class MedicineController extends Controller
     {
         //
         $pharmacyMedicine = PharmacyMedicine::where('medicineId','=',$id)->latest()->get();
+       
         $medicine = Medicine::where('id','=',$id)->latest()->first();
-        return view('Panels.Medicine.show',compact("medicine","pharmacyMedicine"));
+        return view('Panels.Medicine.medListShow',compact("medicine","pharmacyMedicine"));
     }
 
     /**
@@ -68,7 +96,7 @@ class MedicineController extends Controller
     public function edit(Medicine $medicine)
     {
         //
-        return view('Panels.Medicine.edit',compact("medicine"));
+        return view('Panels.Medicine.medListEdit',compact("medicine"));
     
     }
 
@@ -82,7 +110,31 @@ class MedicineController extends Controller
     public function update(Request $request, Medicine $medicine)
     {
         //
-        $medicine->update($request->all());
+        $medicine->update($request->except('medicinePic','medicinePhoto'));
+        if ($request->hasFile('medicinePic')){
+            $this->validate($request, [
+                'medicinePic' => 'required|image|mimes:jpeg,png,jpg,gif',
+            ]);
+        //     $filename = time().'.'.$request->medicinePic->getClientOriginalExtension();
+        //     $resizedImage = Image::make($request->file('medicinePic')->getRealPath());
+        //     $resizedImage->resize(100, 100);
+        //     $user->medicinePic = $filename;
+        //     $resizedImage->save(public_path().'/images/userPhotos/' .  $filename);
+        //     $user->save(); 
+        //     $alert = $filename;
+        } 
+       
+        if ($request->input('medicinePhoto') != NULL){
+            $screen = $request->input('medicinePhoto');
+            $filterd_data = substr($screen, strpos($screen, ",")+1);
+            //Decode the string
+            $unencoded_data=base64_decode($filterd_data);
+            $name = time().'.png';
+            $medicinePhoto = Image::make($unencoded_data);
+            $medicinePhoto->save(public_path().'/images/medicinePhotos/' .  $name);
+            $medicine->medicinePhoto = $name;
+            $medicine->save();
+        }               
         return redirect()->route('medicine.index')->with('success','Medicine has been edited');
        
     }

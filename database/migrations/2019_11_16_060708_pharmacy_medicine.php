@@ -17,9 +17,9 @@ class PharmacyMedicine extends Migration
             $table->increments('id');
             $table->Unsignedinteger('medicineId');
             $table->integer('purchasedPrice');
-            $table->date('dateReceived');
-            $table->date('dateCreated');
-            $table->date('dateExpiry');
+            $table->date('receivedDate');
+            $table->date('manufacturedDate');
+            $table->date('expirationDate');
             $table->integer('quantity');
             $table->timestamps();
         });
