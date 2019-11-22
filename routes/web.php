@@ -38,4 +38,10 @@ Route::post('addProducts/postdata','MedicineListController@postdata')->name('add
 
 
 
+Route::get('/MedInventory', function () {
+    return view('Panels.MedicineInventory.inventoryIndex');
+});
 
+Route::get('/MedInventoryCreate', function () {
+    return view('Panels.MedicineInventory.inventoryCreate');
+});

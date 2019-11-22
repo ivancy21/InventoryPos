@@ -12,8 +12,9 @@
                         <span class="HeaderBannerText">Insert Picture</span>
                 </div>
 
-                <div class="DivTemplate">
-                        <form class="md-form">
+                <div class="flex HeaderBody" >
+                  <div class="container" style="padding-top:10px;">
+                     <form class="md-form">
                                 <div class="file-field">
                                   <div class="z-depth-1-half mb-4">
                                     <img src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg" id="blah" class="img-fluid"
@@ -31,6 +32,7 @@
                                 </div>
                               </form>
                     </div>
+                  </div>
             </div>
     
   <div class="col-sm-8">
@@ -39,8 +41,9 @@
                             </div>
 
 
-                        <div class="DivTemplate">
-                                <div class="row">
+                            <div class="flex HeaderBody">
+                              <div class="container" style="padding-top:10px; padding-bottom:10px;">
+                                                        <div class="row">
                                     <div class="col">
                                           <label  class="fnt">Medicine Code</label>
                                           <input type="text" id="productCode" class="form-control" name="productCode">
@@ -80,7 +83,7 @@
                                     </div>
                                 </div>
                         </div>
-                    
+                      </div>
 
                       <div class="DivTemplate">
                           <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>

@@ -236,7 +236,6 @@ a.navigation:hover, .dropdown:hover .dropbtn {
 
 .fnt{
   font-family: 'Segoe UI';
-  text-align:right;
 }
 
 .mr-6{
@@ -390,6 +389,11 @@ a.navigation:hover, .dropdown:hover .dropbtn {
     box-shadow: 2px 2px 0px 0px #0fceca;
 }
 
+
+
+
+
+
 /*Hr css*/
 
 
@@ -415,8 +419,21 @@ a.navigation:hover, .dropdown:hover .dropbtn {
     padding:10px;
     border-radius: .75rem .75rem 0rem 0rem;
     letter-spacing: 1px;
+    -webkit-box-shadow: 2px 2px 0px 0px #0fceca;
+    -o-box-shadow: 2px 2px 0px 0px #0fceca ;
+    -moz-box-shadow: 2px 2px 0px 0px #0fceca ;
+    box-shadow: 2px 2px 0px 0px #0fceca;
 }
 
+.HeaderBody{
+  padding : 10px 10px 10px 10px; /* Padding Top/Right/Bottom/Left */
+    -webkit-box-shadow: 2px 2px 0px 0px #0fceca;
+    -o-box-shadow: 2px 2px 0px 0px #0fceca ;
+    -moz-box-shadow: 2px 2px 0px 0px #0fceca ;
+    box-shadow: 2px 2px 0px 0px #0fceca;
+    background-color: white; 
+    border-radius: 0rem 0rem .75rem .75rem;
+}
 
 /*th-bg*/
 
