@@ -25,6 +25,10 @@ Route::get('/payment', function () {
 Route::get('/pos', function () {
     return view('Panels.Pos.index');
 });
+    Route::get('/Show', function () {
+return view('Panels.MedicineList.medListShow');
+});
+
 Route::resource('pos','PosController');
 Route::resource('medicine','MedicineController');
 Route::resource('pharmacyMedicine','PharmacyMedicineController');
@@ -33,15 +37,5 @@ Route::get('addProducts/getdata','MedicineListController@getdata')->name('addPro
 Route::post('addProducts/postdata','MedicineListController@postdata')->name('addProducts.postdata');
 
 
-Route::get('/MedList', function () {
-    return view('Panels.MedicineList.medListIndex');
-});
 
 
-Route::get('/MedCreate', function () {
-    return view('Panels.MedicineList.medListCreate');
-});
-
-Route::get('/MedShow', function () {
-    return view('Panels.MedicineList.medListShow');
-});

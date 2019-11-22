@@ -19,8 +19,9 @@
 <link href="{{ asset('css/croppie.css') }}" rel="stylesheet" />
 <script type="text/javascript" src="{{ asset('js/croppie.js') }}" defer></script>
 <div class="content-container">
-      <form class="form-horizontal" method="POST" action="{{route('pharmacyMedicine.store')}}">
-            @csrf
+      <form class="form-horizontal" method="POST" action="{{route('medicine.update',$medicine->id)}}">
+            {{ csrf_field() }}
+            {{ method_field('PUT') }}
            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
            
 
@@ -35,20 +36,21 @@
                         <form class="md-form">
                                 <div class="file-field">
                                   <div class="z-depth-1-half mb-4">
-                                        @if ($medicine->medicinePhoto != null)
-                                        <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="200px" width ="300px" alt="">
-                                        @else
-                                        <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="200px" width="300px" alt="">
-                                        @endif 
+                                      < @if ($medicine->medicinePhoto != null)
+                                      <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="300px" width ="300px" alt="">
+                                      @else
+                                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="300px" width="300px" alt="">
+                                      @endif
                                   </div>
                                   <div class="d-flex justify-content-center">
                                     <div class="btn btn-mdb-color btn-rounded float-left">
-                                            <p> {{$medicine->name}}</p>
-                                            <p> {{$medicine->genericName}}</p>
-                                            <p> {{$medicine->productCode}}</p>
-                                            <p> {{$medicine->companyName}}</p>
-                                            
-                                    </div>
+                                      <span>Choose file</span>
+                                          
+                                      <input type="file" id='medicinePhoto' onchange="readURL(this);"
+                                      class="form-control{{ $errors->has('medicinePhoto') ? ' is-invalid' : '' }}"
+                                      name='medicinePic' style="border: none" />
+                                      <input type="hidden" id="medicinePhotos" name="medicinePhoto">
+                                  </div>
                                   </div>
                                 </div>
                               </form>
@@ -63,34 +65,42 @@
 
                         <div class="DivTemplate">
                                 <div class="row">
+                                    <div class="col">
+                                          <label  class="fnt">Medicine Code</label>
+                                    <input type="text" id="productCode" class="form-control" name="productCode" value="{{$medicine->productCode}}">
+                                    </div>
                              
                                     <div class="col">
-                                          <label  class="fnt">Quantity</label>
-                                          <input type="hidden" id="medicineId" class="form-control" value="{{$medicine->id}}" name="medicineId">
-                                          <input type="text" id="quantity" class="form-control" name="quantity">
-                                        
+                                          <label  class="fnt">Medicine Name</label>
+                                          <input type="text" id="name" class="form-control" name="name" value="{{$medicine->name}}" >
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                            <label  class="fnt">Received Date</label>
-                                            <input type="date" id="receivedDate" class="form-control" name="receivedDate" >
+                                            <label  class="fnt">Category</label>
+                                            <input type="text" id="category" class="form-control" name="category" value="{{$medicine->category}}">
                                     </div>
                             
                                     <div class="col">
-                                            <label  class="fnt">Manufactured Date</label>
-                                            <input type="date" id="manufacturedDate" class="form-control" name="manufacturedDate" >
+                                            <label  class="fnt">Selling Price</label>
+                                            <input type="text" id="sellingPrice" class="form-control" name="price" value="{{$medicine->price}}">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col">
-                                            <label  class="fnt">Expiration Date</label>
-                                            <input type="date" id="expirationDate" class="form-control" name="expirationDate" >
+                                            <label  class="fnt">Generic Name</label>
+                                            <input type="text" id="genericName" class="form-control" name="genericName" value="{{$medicine->genericName}}" >
                                     </div>
                             
                                   <div class="col">
-                                        <label  class="fnt">Purchased Price
-                                        <input type="text" id="purchasedPrice" class="form-control" name="purchasedPrice" >
+                                        <label  class="fnt">Company Name</label>
+                                        <input type="text" id="companyName" class="form-control" name="companyName" value="{{$medicine->companyName}}">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-sm-6">
+                                        <label  class="fnt">Side Effect</label>       
+                                        <input type="text" id="effects" class="form-control" name="sideEffects" value="{{$medicine->sideEffects}}">
                                     </div>
                                 </div>
                         </div>

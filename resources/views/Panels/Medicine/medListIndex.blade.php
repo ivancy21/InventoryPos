@@ -29,28 +29,26 @@
                     <th class="th-sm tblheadfont1">Medicine Name</th>
                     <th class="th-sm tblheadfont1">Code</th>
                     <th class="th-sm tblheadfont1">Price</th>
+                    <th class="th-sm tblheadfont1">Quantity</th>
                     <th class="th-sm tblheadfont1 tbw">Action</th>
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($medicine as $medicines)
                   <tr class="text-center tr-bg">
                     <td class="pwd">
-                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-3.jpg" class="img-fluid img-thumbnail" alt="Sheep">
-                    </td>
-                    <td>Biogesic</td>
-                    <td>A115A</td>
-                    <td>2.846</td>
-                    <td><a type="submit" href="/MedShow" class="btn btn-primary tbw">Select</a></td>
+                    @if ($medicines->medicinePhoto != null)
+                      <img src="{{ asset('images/medicinePhotos/'.$medicines->medicinePhoto) }}" size ="50px" width ="50px" alt="">
+                      @else
+                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="50px" width="50px" alt="">
+                      @endif </td>
+                    <td>{{$medicines->name}}</td>
+                    <td>{{$medicines->productCode}}</td>
+                    <td>{{$medicines->price}}</td>
+                    <td>{{$medicines->pharmacyMedicines->sum('quantity')}}</td>
+                    <td><button type="submit" class="btn btn-primary" onclick="window.location='{{route('medicine.show', $medicines->id)}}'">select</button></td>
                   </tr>
-                  <tr class="text-center tr-bg">
-                    <td class="pwd">
-                        <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/sheep-5.jpg" class="img-fluid img-thumbnail" alt="Sheep">
-                    </td>
-                    <td>LevoCitirizine</td>
-                    <td>A115B</td>
-                    <td>20</td>
-                    <td><button type="submit" class="btn btn-primary" onclick="window.location='{{route('allergyHistory.show', $allergyHistories->id)}}'">show</button></td>
-                  </tr>
+                  @endforeach
                 </tbody>
               </table>   
           </div>
