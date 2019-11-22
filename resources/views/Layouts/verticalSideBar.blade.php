@@ -28,6 +28,11 @@
             </a>
           </li>
           <li>
+            <a href="/MedInventory">
+               <i class="fa fa-capsules" aria-hidden="true"></i>Pharmacy Inventory
+            </a>
+          </li> 
+          <li>
             <a href="#">
               <i class="fa fa-cog" aria-hidden="true"></i> Settings
             </a>

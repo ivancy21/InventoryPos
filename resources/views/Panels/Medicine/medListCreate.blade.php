@@ -35,14 +35,14 @@
                         <form class="md-form">
                                 <div class="file-field">
                                   <div class="z-depth-1-half mb-4">
-                                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="250px" width="300px" alt="" class="img-fluid"
+                                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="250px" id="Photo" width="300px" alt="" class="img-fluid"
                                       alt="example placeholder">
                                   </div>
                                   <div class="d-flex justify-content-center">
                                     <div class="btn btn-mdb-color btn-rounded float-left">
                                       <span>Choose file</span>
                                           
-                                      <input type="file" id='medicinePhoto' onchange="readURL(this);"
+                                      <input type="file" id='medicinePhoto'
                                       class="form-control{{ $errors->has('medicinePhoto') ? ' is-invalid' : '' }}"
                                       name='medicinePic' style="border: none" />
                                       <input type="hidden" id="medicinePhotos" name="medicinePhoto">
@@ -161,20 +161,7 @@
           });
  
   });
-  function readURL(input) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
 
-                reader.onload = function (e) {
-                    $('#blah')
-                        .attr('src', e.target.result)
-                        .width(350)
-                        .height(200);
-                };
-
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
   $(function () {
         $("#medicinePhoto").change(function () {
             readURL(this);
