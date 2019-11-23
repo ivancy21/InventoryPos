@@ -5,7 +5,7 @@
 
 <div class="content-container">
     <div class="container">
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column mb-4">
                 <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
                      <span class="HeaderBannerText">Medicines</span>
                 </div>

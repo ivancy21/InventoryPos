@@ -10,9 +10,7 @@
                 <span class="HeaderBannerText">Add Pharmacy Medicine</span>
             </div>
     
-            <div class="DivTemplate">
-                        
-                        
+            <div class="flex HeaderBody">      
                         <div class="form-group row cnt mr-5">
                                 <label  class="col-sm-2 col-form-label fnt">Medicine Code</label>
                         <div class="col-sm-4">

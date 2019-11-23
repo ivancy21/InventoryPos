@@ -11,15 +11,10 @@
 
             <div class="d-flex flex-column">
                     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-                    <span class="HeaderBannerText">Medicines</span>
+                    <span class="HeaderBannerText">Medicines Inventory</span>
                     </div>
 
-                    <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-                            <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"  data-toggle="tooltip" title="Add Medicine"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>                                            
-                    </div>
-                
-
-      <div class="DivTemplate">
+       <div class="flex HeaderBody"> 
             <div class="table-responsive">
                   
               <table class="table table-image table-hover" id="TblSorter1" cellspacing="0" width="100%">
@@ -46,8 +41,8 @@
                             Action
                             </button>
                             <div class="dropdown-menu">
-                                <a type="submit" class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.show', $medicines->id)}}'"> <i class="fa fa-edit"></i>Add Quantity</a>   
-                                     <a type="submit" onclick="window.location='{{route('inventory.show', $medicines->id)}}'" class="dropdown-item" > <i class="fa fa-trash-alt"></i>View History</a>                   
+                                <button type="submit" class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.show', $medicines->id)}}'"> <i class="fa fa-edit"></i> Add Quantity</button>   
+                                     <button type="submit" onclick="window.location='{{route('inventory.show', $medicines->id)}}'" class="dropdown-item" > <i class="fa fa-trash-alt"></i> View History</button>                   
                             </div>
                                               
                         </td>

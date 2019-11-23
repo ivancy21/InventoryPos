@@ -15,6 +15,11 @@
                <i class="fa fa-capsules" aria-hidden="true"></i>Medicine List
             </a>
           </li> 
+           <li>
+          <a href="{{route('inventory.index')}}">
+               <i class="fa fa-capsules" aria-hidden="true"></i>Pharmacy Inventory
+            </a>
+          </li> 
           <li>
             <a href="/pos">
                 <i class="fa fa-align-justify" aria-hidden="true"></i>Pos
@@ -22,12 +27,6 @@
         </li>
         
           <li class="header">Another Menu</li>
-       
-          <li>
-          <a href="{{route('inventory.index')}}">
-               <i class="fa fa-capsules" aria-hidden="true"></i>Pharmacy Inventory
-            </a>
-          </li> 
           <li>
             <a href="#">
               <i class="fa fa-cog" aria-hidden="true"></i> Settings

@@ -4,20 +4,6 @@
 @include('Layouts.verticalSideBar')
 @include('Layouts.cropImageModal')
 
-<link href="https://res.cloudinary.com/mdrecords/raw/upload/v1561439126/jquery.signaturepad.css" rel="stylesheet">
-<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439191/json2.min.js" defer>
-</script>
-<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439191/numeric-1.2.6.min.js"
-    defer></script>
-<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439179/bezier.js" defer>
-</script>
-<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439185/html2canvas.js" defer>
-</script>
-<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439191/jquery.signaturepad.js"
-    defer></script>
-
-<link href="{{ asset('css/croppie.css') }}" rel="stylesheet" />
-<script type="text/javascript" src="{{ asset('js/croppie.js') }}" defer></script>
 <div class="content-container">
       <form class="form-horizontal" method="POST" action="{{route('pharmacyMedicine.store')}}">
             @csrf
@@ -31,25 +17,28 @@
                         <span class="HeaderBannerText">Insert Picture</span>
                 </div>
 
-                <div class="DivTemplate">
+                <div class="flex HeaderBody"> 
                         <form class="md-form">
                                 <div class="file-field">
-                                  <div class="z-depth-1-half mb-4">
+                                  <div class="z-depth-1-half mb-1">
                                         @if ($medicine->medicinePhoto != null)
-                                        <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="200px" width ="300px" alt="">
+                                        <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="200px" class="img-fluid img-size" alt="">
                                         @else
-                                        <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="200px" width="300px" alt="">
+                                        <img src="{{ asset('images/medicineicon.png') }}" size="200px" class="img-fluid img-size" alt="">
                                         @endif 
-                                  </div>
-                                  <div class="d-flex justify-content-center">
-                                    <div class="btn btn-mdb-color btn-rounded float-left">
-                                            <p> {{$medicine->name}}</p>
-                                            <p> {{$medicine->genericName}}</p>
-                                            <p> {{$medicine->productCode}}</p>
-                                            <p> {{$medicine->companyName}}</p>
-                                            
-                                    </div>
-                                  </div>
+                                  </div>      
+                                            <table class="table table-borderless dataDisplayer">
+                                                    <tbody>
+                                                         <tr class="highlight">
+                                                            <td>Medicine Code</td>
+                                                            <td>{{$medicine->productCode}}</td>
+                                                        </tr>
+                                                        <tr class="highlight">
+                                                                <td>Medicine Name</td>
+                                                                <td>{{$medicine->name}}</td>
+                                                            </tr>
+                                                    </tbody>
+                                                </table>                                     
                                 </div>
                               </form>
                     </div>
@@ -61,37 +50,40 @@
                             </div>
 
 
-                        <div class="DivTemplate">
+                            <div class="flex HeaderBody"> 
                                 <div class="row">
-                             
-                                    <div class="col">
-                                          <label  class="fnt">Quantity</label>
-                                          <input type="hidden" id="medicineId" class="form-control" value="{{$medicine->id}}" name="medicineId">
-                                          <input type="text" id="quantity" class="form-control" name="quantity">
-                                        
+                                        <div class="col">
+                                                <label  class="fnt">Quantity</label>
+                                                <input type="hidden" id="medicineId" class="form-control" value="{{$medicine->id}}" name="medicineId">
+                                                <input type="text" id="quantity" class="form-control" name="quantity">
+                                        </div>
+                                
+                                        <div class="col">
+                                                <label  class="fnt">Purchased Price </label>       
+                                                <input type="text" id="purchasedPrice" class="form-control" name="purchasedPrice">
+                                        </div>
                                     </div>
-                                </div>
+
+
+
                                 <div class="row">
-                                    <div class="col">
-                                            <label  class="fnt">Received Date</label>
-                                            <input type="date" id="receivedDate" class="form-control" name="receivedDate" >
-                                    </div>
-                            
+                                        <div class="col">
+                                                <label  class="fnt">Received Date</label>
+                                                <input type="date" id="receivedDate" class="form-control" name="receivedDate" >
+                                        </div>
                                     <div class="col">
                                             <label  class="fnt">Manufactured Date</label>
                                             <input type="date" id="manufacturedDate" class="form-control" name="manufacturedDate" >
                                     </div>
+                                
+                              
+                                    
                                 </div>
                                 <div class="row">
-                                    <div class="col">
-                                            <label  class="fnt">Expiration Date</label>
-                                            <input type="date" id="expirationDate" class="form-control" name="expirationDate" >
-                                    </div>
-                            
-                                  <div class="col">
-                                        <label  class="fnt">Purchased Price
-                                        <input type="text" id="purchasedPrice" class="form-control" name="purchasedPrice" >
-                                    </div>
+                                        <div class="col-sm-6">
+                                                <label  class="fnt">Expiration Date</label>
+                                                <input type="date" id="expirationDate" class="form-control" name="expirationDate" >
+                                        </div>
                                 </div>
                         </div>
                     
@@ -100,7 +92,7 @@
                           <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
                           <div class="hr mb-2"></div> 
                           <button type="submit" class="btn btn-primary">SAVE</button>
-                          <input class="btn btn-outline-info waves-effect float-right" type="button" href="/MedList" value="BACK">    
+                          <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location='{{route('inventory.index')}}'" value="BACK">    
                       </div>
 
                     </div>

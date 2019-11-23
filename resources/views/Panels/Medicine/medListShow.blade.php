@@ -79,8 +79,7 @@
                             <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
                             <div class="hr mb-2"></div> 
                             <button type="submit" class="btn btn-info"  onclick="window.location='{{route('medicine.edit',$medicine->id)}}'">EDIT</button>
-                            <input class="btn btn-outline-info waves-effect float-right" type="button"  onclick="window.location='{{route('medicine.index')}}'" value="BACK">    
-                            <button type="submit" class="btn btn-info"  onclick="window.location='{{route('pharmacyMedicine.show',$medicine->id)}}'">UPDATE</button>
+                            <input class="btn btn-outline-info waves-effect float-right" type="button"  onclick="window.location='{{route('medicine.index')}}'" value="BACK">           
                         </div>
                                 
                 </div>
