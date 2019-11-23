@@ -25,6 +25,22 @@
     <script defer src="{{ asset('js/tableSorter.js') }}"></script>
     <script defer src="{{ asset('js/master.js') }}"></script>
 
+    <link href="https://res.cloudinary.com/mdrecords/raw/upload/v1561439126/jquery.signaturepad.css" rel="stylesheet">
+<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439191/json2.min.js" defer>
+</script>
+<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439191/numeric-1.2.6.min.js"
+    defer></script>
+<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439179/bezier.js" defer>
+</script>
+<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439185/html2canvas.js" defer>
+</script>
+<script type="text/javascript" src="https://res.cloudinary.com/mdrecords/raw/upload/v1561439191/jquery.signaturepad.js"
+    defer></script>
+
+    
+<link href="{{ asset('css/croppie.css') }}" rel="stylesheet" />
+<script type="text/javascript" src="{{ asset('js/croppie.js') }}" defer></script>
+
 </head>
     
 <body id="mainbody">
