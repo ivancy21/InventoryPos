@@ -79,7 +79,7 @@
                 <div class="DivTemplate">
                         <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
                         <div class="hr mb-2"></div> 
-                        <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location = '{{ route('medicine.index') }}'" value="BACK">    
+                        <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location='{{route('inventory.index')}}'" value="BACK">    
                     </div>
                
 

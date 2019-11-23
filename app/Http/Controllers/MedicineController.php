@@ -69,7 +69,7 @@ class MedicineController extends Controller
             $medicine->save();
         }               
 
-        return redirect()->route('medicine.show')->with('success','Successfully Added');
+        return redirect()->route('medicine.index')->with('success','Successfully Added');
     }
 
     /**

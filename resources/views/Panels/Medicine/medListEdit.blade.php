@@ -23,9 +23,9 @@
                                         <div class="file-field">
                                             <div class="z-depth-1-half mb-4">
                                                 @if ($medicine->medicinePhoto != null)
-                                                <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size="250px" id="Photo" class="img-fluid img-size" alt="">
+                                                <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size="250px"  id="Photo" class="img-fluid img-size" alt="">
                                                 @else
-                                                <img src="{{ asset('images/medicineicon.png') }}" size="250px"  class="img-fluid img-size" alt="">
+                                                <img src="{{ asset('images/medicineicon.png') }}" size="250px"  class="img-fluid img-size" id="Photo" alt="">
                                                 @endif
                                             </div>
                                             <div class="d-flex justify-content-center">

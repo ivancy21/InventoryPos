@@ -33,18 +33,5 @@ Route::resource('pos','PosController');
 Route::resource('inventory','InventoryController');
 Route::resource('medicine','MedicineController');
 Route::resource('pharmacyMedicine','PharmacyMedicineController');
-Route::get('addProducts','MedicineListController@index')->name('addProducts');
-Route::get('addProducts/getdata','MedicineListController@getdata')->name('addProducts.getdata');
-Route::post('addProducts/postdata','MedicineListController@postdata')->name('addProducts.postdata');
 
-
-
-
-Route::get('/MedInventory', function () {
-    return view('Panels.MedicineInventory.inventoryIndex');
-});
-
-Route::get('/MedInventoryCreate', function () {
-    return view('Panels.MedicineInventory.inventoryCreate');
-});
 
