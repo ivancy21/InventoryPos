@@ -435,6 +435,30 @@ a.navigation:hover, .dropdown:hover .dropbtn {
     border-radius: 0rem 0rem .75rem .75rem;
 }
 
+.HeaderBody2{
+    -webkit-box-shadow: 2px 2px 0px 0px #0fceca;
+    -o-box-shadow: 2px 2px 0px 0px #0fceca ;
+    -moz-box-shadow: 2px 2px 0px 0px #0fceca ;
+    box-shadow: 2px 2px 0px 0px #0fceca;
+    background-color: white; 
+    border-radius: 0rem 0rem .75rem .75rem;
+}
+
+.img-size{
+  height:175px!important;
+  width:350px!important;
+}
+
+.img-sizes{
+  height:200px!important;
+  width:350px!important;
+}
+
+.pad-top{
+  padding-top:20px!important;
+  color:rgb(56, 54, 54)!important;
+}
+
 /*th-bg*/
 
 .thead-bg {
@@ -492,3 +516,5 @@ table.dataDisplayer td:nth-child(odd), .oddrow {
   color: #676767;
   font-weight: 600;
 }
+
+
