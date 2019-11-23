@@ -22,13 +22,9 @@
         </li>
         
           <li class="header">Another Menu</li>
+       
           <li>
-            <a href="/MedList">
-              <i class="fa fa-capsules" aria-hidden="true"></i>Medicine List
-            </a>
-          </li>
-          <li>
-            <a href="/MedInventory">
+          <a href="{{route('inventory.index')}}">
                <i class="fa fa-capsules" aria-hidden="true"></i>Pharmacy Inventory
             </a>
           </li> 
