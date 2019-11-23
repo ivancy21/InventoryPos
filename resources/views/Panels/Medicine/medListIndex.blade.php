@@ -29,7 +29,6 @@
                     <th class="th-sm tblheadfont1">Medicine Name</th>
                     <th class="th-sm tblheadfont1">Code</th>
                     <th class="th-sm tblheadfont1">Price</th>
-                    <th class="th-sm tblheadfont1">Quantity</th>
                     <th class="th-sm tblheadfont1 tbw">Action</th>
                   </tr>
                 </thead>
@@ -45,7 +44,6 @@
                     <td>{{$medicines->name}}</td>
                     <td>{{$medicines->productCode}}</td>
                     <td>{{$medicines->price}}</td>
-                    <td>{{$medicines->pharmacyMedicines->sum('quantity')}}</td>
                     <td><button type="submit" class="btn btn-primary" onclick="window.location='{{route('medicine.show', $medicines->id)}}'">select</button></td>
                   </tr>
                   @endforeach

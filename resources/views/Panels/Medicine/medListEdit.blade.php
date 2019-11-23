@@ -39,7 +39,7 @@
                                       < @if ($medicine->medicinePhoto != null)
                                       <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="300px" width ="300px" alt="">
                                       @else
-                                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="300px" width="300px" alt="">
+                                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}"  id="Photo" size="300px" width="300px" alt="">
                                       @endif
                                   </div>
                                   <div class="d-flex justify-content-center">

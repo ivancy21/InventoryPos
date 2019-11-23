@@ -35,7 +35,7 @@
                         <form class="md-form">
                                 <div class="file-field">
                                   <div class="z-depth-1-half mb-4">
-                                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" size="250px" id="Photo" width="300px" alt="" class="img-fluid"
+                                      <img src="{{ asset('images/medicinePhotos/default pic.jpg') }}" id= "Photo" size="250px" width="300px" alt="" class="img-fluid"
                                       alt="example placeholder">
                                   </div>
                                   <div class="d-flex justify-content-center">
