@@ -44,7 +44,7 @@
                                             <span class="HeaderBannerText">Details</span>
                                     </div>
                                     <div class="flex HeaderBody">
-                                        <div class="row">
+                                        <div class="row mb-2">
                                             <div class="col">
                                                 <label  class="fnt">Medicine Code</label>
                                                 <input type="text" id="productCode" class="form-control" name="productCode" required>
@@ -55,7 +55,7 @@
                                                 <input type="text" id="name" class="form-control" name="name" required>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row mb-2">
                                             <div class="col">
                                                     <label  class="fnt">Category</label>
                                                     <input type="text" id="category" class="form-control" name="category" required>
@@ -66,7 +66,7 @@
                                                     <input type="text" id="sellingPrice" class="form-control" name="price"  pattern="[0-9]+" title="Number only" required>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row mb-2">
                                             <div class="col">
                                                     <label  class="fnt">Generic Name</label>
                                                     <input type="text" id="genericName" class="form-control" name="genericName" required>
@@ -77,7 +77,7 @@
                                                 <input type="text" id="companyName" class="form-control" name="companyName" required>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row mb-2">
                                         <div class="col-sm-6">
                                                 <label  class="fnt">Side Effect</label>       
                                                 <input type="text" id="effects" class="form-control" name="sideEffects" required>
