@@ -19,6 +19,7 @@
                         <form class="md-form">
                                 <div class="file-field">
                                   <div class="z-depth-1-half mb-1">
+                                    {{-- Photo Insertion --}}
                                         @if ($medicine->medicinePhoto != null)
                                         <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="200px" class="img-fluid img-size" alt="">
                                         @else
@@ -38,7 +39,7 @@
                                                     </tbody>
                                                 </table>                                     
                                 </div>
-                              </form>
+                        </form>
                     </div>
             </div>
     
@@ -55,8 +56,11 @@
                                         </div>
                                         <div class="col-sm-9">              
                                                 <input type="hidden" id="medicineId" class="form-control" value="{{$medicine->id}}" name="medicineId">
-                                                <input type="text" id="quantity" class="form-control" name="quantity">
-                                        </div>
+                                                <input type="text" list="quantity" name="quantity">
+                                                <datalist id="quantity">
+                                              {!!quantity()!!}
+                                                </datalist>
+                                            </div>
                                     </div>
                                     <div class="row mb-3">
                                 <div class="col-sm-3 ">
@@ -64,7 +68,7 @@
                                 </div>
                                         <div class="col-sm-9">
                                                      
-                                                <input type="text" id="purchasedPrice" class="form-control" name="purchasedPrice">
+                                                <input type="text" id="purchasedPrice"  pattern="^\d*(\.\d{0,2})?$"class="form-control" name="purchasedPrice" required>
                                         </div>
                                     </div>
 
@@ -77,17 +81,17 @@
                                         </div>
                                     <div class="form-group col-sm-3">
                                           
-                                        <select name='month' id='month' onchange="getDay('month', 'day', 'year');" class="form-control" required>
+                                        <select name='receivedMonth' id='month1' onchange="getDay('month1', 'day1', 'year1');" class="form-control" required>
                                             {!! month() !!}
                                         </select>
                                     </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='day' id='day' class='form-control' required> 
+                                        <select name='receivedDay' id='day1' class='form-control' required> 
                                             <option value="" disabled selected>Day</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='year' id='year' onchange="getDay('month', 'day', 'year');" class="form-control" required>
+                                        <select name='receivedYear' id='year1' onchange="getDay('month1', 'day1', 'year1');" class="form-control" required>
                                             <option value="" disabled selected>Year</option>
                                             {!! year() !!}
                                         </select>
@@ -101,17 +105,17 @@
                                                 <label  class="fnt">Manufactured Date</label>
                                                 </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='month' id='month2' onchange="getDay('month2', 'day2', 'year2');" class="form-control" required>
+                                        <select name='manufacturedMonth' id='month2' onchange="getDay('month2', 'day2', 'year2');" class="form-control" required>
                                             {!! month() !!}
                                         </select>
                                     </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='day' id='day2' class='form-control' required> 
+                                        <select name='manufacturedDay' id='day2' class='form-control' required> 
                                             <option value="" disabled selected>Day</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='year' id='year2' onchange="getDay('month2', 'day2', 'year2');" class="form-control" required>
+                                        <select name='manufacturedYear' id='year2' onchange="getDay('month2', 'day2', 'year2');" class="form-control" required>
                                             <option value="" disabled selected>Year</option>
                                             {!! year() !!}
                                         </select>
@@ -125,17 +129,17 @@
                                         <label  class="fnt">Expiration Date</label>
                                         </div>
                             <div class="form-group col-sm-3">
-                                <select name='month' id='month3' onchange="getDay('month3', 'day3', 'year3');" class="form-control" required>
+                                <select name='expirationMonth' id='month3' onchange="getDay('month3', 'day3', 'year3');" class="form-control" required>
                                     {!! month() !!}
                                 </select>
                             </div>
                             <div class="form-group col-sm-3">
-                                <select name='day' id='day3' class='form-control' required> 
+                                <select name='expirationDay' id='day3' class='form-control' required> 
                                     <option value="" disabled selected>Day</option>
                                 </select>
                             </div>
                             <div class="form-group col-sm-3">
-                                <select name='year' id='year3' onchange="getDay('month3', 'day3', 'year3');" class="form-control" required>
+                                <select name='expirationYear' id='year3' onchange="getDay('month3', 'day3', 'year3');" class="form-control" required>
                                     <option value="" disabled selected>Year</option>
                                     {!! year() !!}
                                 </select>
@@ -149,7 +153,7 @@
                           <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
                           <div class="hr mb-2"></div> 
                           <button type="submit" class="btn btn-primary">SAVE</button>
-                          <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location='{{route('inventory.index')}}'" value="BACK">    
+                          <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location = '{{ route('inventory.index') }}'" value="BACK">    
                       </div>
 
                     </div>

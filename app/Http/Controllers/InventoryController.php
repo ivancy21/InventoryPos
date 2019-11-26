@@ -49,11 +49,10 @@ class InventoryController extends Controller
      */
     public function show($PharmacyMedicine)
     {
-        //
-        $pharmacyMedicine=PharmacyMedicine::latest()->get();
-        $medicine=Medicine::latest()->first();
-
-        return view('Panels.MedicineInventory.inventoryShow',compact("medicine","pharmacyMedicine"));
+         //
+         $pharmacyMedicine=PharmacyMedicine::where('MedicineId','=',$PharmacyMedicine)->latest()->get();
+         $medicine=Medicine::where('id','=',$PharmacyMedicine)->latest()->first();
+         return view('Panels.MedicineInventory.inventoryShow',compact("medicine","pharmacyMedicine"));
         
     }
 

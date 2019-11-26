@@ -29,7 +29,8 @@ class MedicineController extends Controller
     public function create()
     {
         //
-        return view('Panels.Medicine.medListCreate');
+        $medicine = Medicine::latest()->first();
+        return view('Panels.Medicine.medListCreate',compact('medicine'));
     }
 
     /**
@@ -69,7 +70,7 @@ class MedicineController extends Controller
             $medicine->save();
         }               
 
-        return redirect()->route('medicine.index')->with('success','Successfully Added');
+        return redirect()->route('medicine.show',$medicine->id)->with('success','Successfully Added');
     }
 
     /**
@@ -82,7 +83,6 @@ class MedicineController extends Controller
     {
         //
         $pharmacyMedicine = PharmacyMedicine::where('medicineId','=',$id)->latest()->get();
-       
         $medicine = Medicine::where('id','=',$id)->latest()->first();
         return view('Panels.Medicine.medListShow',compact("medicine","pharmacyMedicine"));
     }
@@ -135,7 +135,7 @@ class MedicineController extends Controller
             $medicine->medicinePhoto = $name;
             $medicine->save();
         }               
-        return redirect()->route('medicine.index')->with('success','Medicine has been edited');
+        return redirect()->route('medicine.show',$medicine->id)->with('success','Medicine has been EDITED');
        
     }
 

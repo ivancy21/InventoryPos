@@ -57,38 +57,37 @@
                                         <div class="row mb-2">
                                             <div class="col">
                                                     <label  class="fnt">Category</label>
-                                                    <input type="text" id="category" class="form-control" name="category" required>
+                                                    <input type="text" id="category" class="form-control" name="category" >
                                             </div>
                                     
                                             <div class="col">
                                                     <label  class="fnt">Selling Price</label>
-                                                    <input type="text" id="sellingPrice" class="form-control" name="price"  pattern="[0-9]+" title="Number only" required>
+                                                    <input type="text" id="sellingPrice" class="form-control" name="price"   pattern="^\d*(\.\d{0,2})?$"  title="Number only">
                                             </div>
                                         </div>
                                         <div class="row mb-2">
                                             <div class="col">
                                                     <label  class="fnt">Generic Name</label>
-                                                    <input type="text" id="genericName" class="form-control" name="genericName" required>
+                                                    <input type="text" id="genericName" class="form-control" name="genericName" >
                                             </div>
                                     
                                         <div class="col">
                                                 <label  class="fnt">Company Name</label>
-                                                <input type="text" id="companyName" class="form-control" name="companyName" required>
+                                                <input type="text" id="companyName" class="form-control" name="companyName" >
                                             </div>
                                         </div>
                                         <div class="row mb-2">
                                         <div class="col-sm-6">
                                                 <label  class="fnt">Side Effect</label>       
-                                                <input type="text" id="effects" class="form-control" name="sideEffects" required>
+                                                <input type="text" id="effects" class="form-control" name="sideEffects" >
                                             </div>
                                         </div>
                                 </div>
-                            
-
+                               <label type="hidden" value="{{$medicine}}"> </label>
                             <div class="DivTemplate">
                                 <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
                                 <div class="hr mb-2"></div> 
-                                <button type="submit" class="btn btn-primary">SAVE</button>
+                                <button type="submit" class="btn btn-primary" >SAVE</button>
                                 <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location='{{route('medicine.index')}}'" value="BACK">    
                             </div>
                       </div>
@@ -159,6 +158,19 @@
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    $(document).on('keydown', 'input[pattern]', function(e){
+  var input = $(this);
+  var oldVal = input.val();
+  var regex = new RegExp(input.attr('pattern'), 'g');
+
+  setTimeout(function(){
+    var newVal = input.val();
+    if(!regex.test(newVal)){
+      input.val(oldVal); 
+    }
+  }, 0);
+});
 </script>
 
 

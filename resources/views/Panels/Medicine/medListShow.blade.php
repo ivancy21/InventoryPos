@@ -83,16 +83,4 @@
         </div>
 
 
-<script>
-
-var msg = '{{Session::get('success')}}';
-var exist = '{{Session::get('success')}}';
-if(exist){
-    alert(msg);
-}
-
-</script>
-
-
-
 @endsection
