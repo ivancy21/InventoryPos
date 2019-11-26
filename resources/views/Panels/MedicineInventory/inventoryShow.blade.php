@@ -1,13 +1,6 @@
 @extends('Layouts.master')
 @section('content')
 
-@include('Layouts.verticalSideBar')
-
-
-
-<div class="content-container">
-      
-        <div class="container-fluid">
 
       
 {{-- Side Nav --}}
@@ -85,18 +78,7 @@
 
       </div>   
     </div>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-
-
+ 
 
 <script>
 

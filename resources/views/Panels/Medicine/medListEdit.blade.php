@@ -1,11 +1,9 @@
 @extends('Layouts.master')
 @section('content')
 
-@include('Layouts.verticalSideBar')
 @include('Layouts.cropImageModal')
 
 
-<div class="content-container">
       <form class="form-horizontal" method="POST" action="{{route('medicine.update',$medicine->id)}}">
            @csrf
            @method('PUT')
@@ -103,7 +101,6 @@
                 </div>              
          </div>
       </div>
-</div>
 
 <script>
   $(document).ready(function () {

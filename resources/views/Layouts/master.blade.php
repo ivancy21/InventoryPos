@@ -39,90 +39,128 @@
 
     
 <link href="{{ asset('css/croppie.css') }}" rel="stylesheet" />
+<link href="{{ asset('css/nav.css') }}" rel="stylesheet" />
 <script type="text/javascript" src="{{ asset('js/croppie.js') }}" defer></script>
 
 </head>
     
-<body id="mainbody">
+    <body id="mainbody">
         <div id="master">
-            <!-- Navigation -->    
             <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-                <img class="mdrecords-logo" src="{{ asset('images/MDR_icon.png') }}">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="navigation" href="/home">Dashboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button class="dropbtn">Patient Care
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                                <div class="dropdown-content">
-                                    <a href="#">Patient Selection</a>
-                                    <a href="/patientShow">Demographics</a>
-                                    <a href="/createPatient">Registration</a>
-                                    <a href="/createMedicalHistory">Medical History</a>
-                                    <a href="/createOfficeVisit">Office Visit</a>
+                    <img class="mdrecords-logo" src="{{ asset('images/MDR_icon.png') }}">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="navigation" href="/home">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="dropbtn">Patient Care
+                                        <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Patient Selection</a>
+                                        <a href="/patientShow">Demographics</a>
+                                        <a href="/createPatient">Registration</a>
+                                        <a href="/createMedicalHistory">Medical History</a>
+                                        <a href="/createOfficeVisit">Office Visit</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="navigation" href="/waitingRoom">Waiting Room</a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown">
-                                <button class="dropbtn">PhilHealth
-                                    <i class="fa fa-caret-down"></i>
-                                </button>
-                                <div class="dropdown-content">
-                                    <a href="philhealthclaimform1">CF-1</a>
-                                    <a href="philhealthclaimform2">CF-2</a>
-                                    <a href="philhealthclaimform3">CF-3</a>
-                                    <a href="philhealthclaimform4">CF-4</a>
-                                    <a href="claimSignatureForm">CSF</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="navigation" href="/waitingRoom">Waiting Room</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="dropbtn">PhilHealth
+                                        <i class="fa fa-caret-down"></i>
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a href="philhealthclaimform1">CF-1</a>
+                                        <a href="philhealthclaimform2">CF-2</a>
+                                        <a href="philhealthclaimform3">CF-3</a>
+                                        <a href="philhealthclaimform4">CF-4</a>
+                                        <a href="claimSignatureForm">CSF</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                       
-                    </ul>
-                    {{-- <div class="nav-displayer user-details">
-                        <table class="user-details-table">
-                            <tr>
-                                <td rowspan="2"><img src="
-                                    @if (!empty(Auth::user()->userPic))
-                                    {{ asset('images/userPhotos/'.Auth::user()->userPic) }}
-                                    @else
-                                    {{ asset('images/default pic.jpg') }}
-                                    @endif
-                                    " class="rounded-circle user-detail-photo">
-                                </td>
-                                <td>&emsp;
-                                    <label onclick="window.location = '{{ route('users.show', Auth::user()->id) }}'" class="user-detail-name">
-                                        {{ Auth::user()->lastName }}, {{ Auth::user()->firstName }} </label>&emsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    @if(!empty(Auth::user()->getRoleNames()))
-                                    @foreach(Auth::user()->getRoleNames() as $userType)
-                                    <strong class="label-color">{{ $userType }} </strong>
-                                    @endforeach
-                                    @endif
-                                </td>
-                            </tr>
-                        </table>
-                    </div> --}}
-                   
-                </div>
-            </nav>
-    
-            <div class="mdrecords-body">    
-                @yield('content')
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
-    </body>
+          
+    <div class="mdrecords-body">
+            <div class="wrapper">
+                <!-- Sidebar Holder -->
+               
+                <nav id="sidebar">
+                        <div class="sidebar-logo">
+                                Inventory
+                               </div>
+                               <ul class="sidebar-navigation">
+                                 <li class="header">Navigation</li>
+                                 <li>
+                                   <a href="/">
+                                     <i class="fa fa-home" aria-hidden="true"></i> Homepage
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="{{route('medicine.index')}}">
+                                      <i class="fa fa-capsules" aria-hidden="true"></i>Medicine List
+                                   </a>
+                                 </li>
+                                  <li>
+                                 <a href="{{route('inventory.index')}}">
+                                      <i class="fa fa-capsules" aria-hidden="true"></i>Pharmacy Inventory
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="/pos">
+                                       <i class="fa fa-align-justify" aria-hidden="true"></i>Pos
+                                   </a>
+                               </li>
+                                 <li class="header">Another Menu</li>
+                                 <li>
+                                   <a href="#">
+                                     <i class="fa fa-cog" aria-hidden="true"></i> Settings
+                                   </a>
+                                 </li>
+                                 <li>
+                                   <a href="#">
+                                     <i class="fa fa-info-circle" aria-hidden="true"></i> Information
+                                   </a>
+                                 </li>
+                               </ul>
+                   
+                </nav>
+        
+        
+                <!-- Page Content Holder -->
+                <div id="content">
+                        <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                       
+                        @yield('content')
+                  
+                
+                </div>
+            </div>
+        </div>
+
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $('#sidebarCollapse').on('click', function () {
+                        $('#sidebar').toggleClass('active');
+                        $(this).toggleClass('active');
+                    });
+                });
+            </script>
+        </body>
 
 </html>
