@@ -27,7 +27,7 @@
                   <tr class="text-center tr-bg">
                     <td>{{$medicines->name}}</td>
                     <td>{{$medicines->productCode}}</td>
-                    <td>{{$medicines->price}}</td>
+                    <td>&#8369;{{$medicines->price}}</td>
                     <td>{{$medicines->pharmacyMedicines->sum('quantity')}}</td>
                     <td class="cnterAlgn"><div class="btn-group">
                         <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

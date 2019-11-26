@@ -16,7 +16,7 @@ class PharmacyMedicineController extends Controller
     public function index()
     {
         //
-        $pharmacyMedicine=PharmacyMedicine::all();
+        $pharmacyMedicine=PharmacyMedicine::latest()->get();
         $medicine=Medicine::latest()->get();
         return view('Panels.PharmacyMedicine.inventoryIndex',compact("medicine","pharmacyMedicine"));
     }
@@ -57,9 +57,9 @@ class PharmacyMedicineController extends Controller
     {
         
         //
-        $pharmacyMedicine=PharmacyMedicine::where('id','=',$PharmacyMedicine)->latest()->first();
+        $pharmacyMedicine=PharmacyMedicine::where('medicineId','=',$PharmacyMedicine)->latest()->get();
         $medicine=Medicine::where('id','=',$PharmacyMedicine)->latest()->first();
-        return view('Panels.PharmacyMedicine.add',compact("medicine","pharmacyMedicine"));
+        return view('Panels.PharmacyMedicine.create',compact("medicine","pharmacyMedicine"));
         
     }
 

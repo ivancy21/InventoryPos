@@ -33,7 +33,7 @@
                                       @endif </td>
                                     <td class="pad-top">{{$medicines->name}}</td>
                                     <td class="pad-top">{{$medicines->productCode}}</td>
-                                    <td class="pad-top">{{$medicines->price}}</td>
+                                    <td class="pad-top">&#8369;{{$medicines->price}}</td>
                                     <td class="pad-top"><button type="submit" class="btn btn-primary" onclick="window.location='{{route('medicine.show', $medicines->id)}}'">select</button></td>
                                 </tr>
                                 @endforeach
@@ -53,5 +53,6 @@
 
 </script>
 
+  
 
 @endsection

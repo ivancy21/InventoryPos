@@ -16,10 +16,16 @@ class PharmacyMedicine extends Migration
         Schema::create('PharmacyMedicine', function (Blueprint $table) {
             $table->increments('id');
             $table->Unsignedinteger('medicineId');
-            $table->integer('purchasedPrice');
-            $table->date('receivedDate');
-            $table->date('manufacturedDate');
-            $table->date('expirationDate');
+            $table->integer('purchasedPrice')->nullable();
+            $table->string('receivedMonth');
+            $table->string('receivedDay');
+            $table->string('receivedYear');
+            $table->string('manufacturedMonth');
+            $table->string('manufacturedDay');
+            $table->string('manufacturedYear');
+            $table->string('expirationMonth');
+            $table->string('expirationDay');
+            $table->string('expirationYear');
             $table->integer('quantity');
             $table->timestamps();
         });

@@ -8,31 +8,30 @@
             <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
                     <span class="HeaderBannerText">History</span>
                     </div>
-                    <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-                            <div class="tab">
-                            <button class="tablinks" onclick="window.location='{{route('medicine.index')}}'">Medicine List</button>
-                            <button class="tablinks" onclick="window.location='{{route('pharmacyMedicine.index')}}'">History</button>
-                            <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>
-                  
-                          
-                        
-                    </div>
-                   
+                    <div class="flex HeaderBody"> 
+                            <form class="md-form">
+                                    <div class="file-field">
+                                                <table class="table table-borderless dataDisplayer">
+                                                        <tbody>
+                                                             <tr class="highlight">
+                                                                <td>Medicine Code</td>
+                                                                <td>{{$medicine->productCode}}</td>
+                                                            </tr>
+                                                            <tr class="highlight">
+                                                                    <td>Medicine Name</td>
+                                                                    <td>{{$medicine->name}}</td>
+                                                                </tr>
+                                                        </tbody>
+                                                    </table>                                     
+                                    </div>
+                            </form>
+                        </div>
                 </div>
 
-
+    
 
 {{-- Product List Template --}}
 
-        <div class="d-flex flex-column">
-        <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
-        <center><span class="HeaderBannerText">Name: <b>{{$medicine->name}}<p></p></b>Product Code: <b>{{$medicine->productCode}}</b></span></center>
-        </div>
-        <div class="flex" style="background-color: white; border-radius: 0rem 0rem .75rem .75rem; overflow: auto">
-        <div class="tab">
-        </div>
-        </div>
-    
     <div id="ProdList" class="tabcontent" style="display:block;">
         <div class="DivTemplate">
             <div class="table-responsive">
@@ -41,10 +40,9 @@
                     <thead  class="thead-bg table-bordered">
                         <tr class="text-center">
                                 <th class="th-sm tblheadfont1">Purchased Price </th>
-                                <th class="th-sm tblheadfont1">Selling Price </th>
-                                <th class="th-sm tblheadfont1">Date Created </th>
-                                <th class="th-sm tblheadfont1">Date Expired </th>
-                                <th class="th-sm tblheadfont1"> Date Received </th>
+                                <th class="th-sm tblheadfont1">Manufactured Date </th>
+                                <th class="th-sm tblheadfont1">Expiration Date </th>
+                                <th class="th-sm tblheadfont1"> Received Date </th>
                                 <th class="th-sm tblheadfont1" >Quantity </th>
                                 
                         </tr>
@@ -53,11 +51,10 @@
                         <tbody>
                             <tr class="text-center">
                                     @foreach($pharmacyMedicine as $pharmacyMedicines)
-                                    <td class="cnterAlgn">{{$pharmacyMedicines->purchasedPrice}}</td>
-                                    <td class="cnterAlgn">{{$pharmacyMedicines->medicine->price}}</td>
-                                    <td class="cnterAlgn">{{$pharmacyMedicines->manufacturedDate}}</td>
-                                    <td class="cnterAlgn">{{$pharmacyMedicines->expirationDate}}</td>
-                                    <td class="cnterAlgn">{{$pharmacyMedicines->receivedDate}}</td>
+                                    <td class="cnterAlgn">&#8369;{{$pharmacyMedicines->purchasedPrice}}</td>
+                                    <td class="cnterAlgn">{{$pharmacyMedicines->manufacturedMonth}}-{{$pharmacyMedicines->manufacturedDay}}-{{$pharmacyMedicines->manufacturedYear}}</td>
+                                    <td class="cnterAlgn">{{$pharmacyMedicines->expirationMonth}}-{{$pharmacyMedicines->expirationDay}}-{{$pharmacyMedicines->expirationYear}}</td>
+                                    <td class="cnterAlgn">{{$pharmacyMedicines->receivedMonth}}-{{$pharmacyMedicines->receivedDay}}-{{$pharmacyMedicines->receivedYear}}</td>
                                     <td class="cnterAlgn">{{$pharmacyMedicines->quantity}}</td>
                             </tr>
                             @endforeach
@@ -72,7 +69,7 @@
                 <div class="DivTemplate">
                         <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
                         <div class="hr mb-2"></div> 
-                        <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location='{{route('inventory.index')}}'" value="BACK">    
+                        <input class="btn btn-outline-info waves-effect float-right" type="button" onclick="window.location = '{{ route('inventory.index') }}'" value="BACK">    
                     </div>
                
 

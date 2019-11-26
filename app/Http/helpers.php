@@ -63,6 +63,22 @@ function goToDiv($ButtonID, $ButtonName, $TargetDivID)
 
 <?php 
 //function for date values
+function quantity(){
+    $html ='<option value="" disabled selected>Quantity</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+                
+            ';
+    return $html;
+}
 function month(){
     $html ='<option value="" disabled selected>Month</option>
             <option value="1">Jan</option>
@@ -80,7 +96,7 @@ function month(){
     return $html;
 }
 function year(){
-    $firstYear = date("Y");
+    $firstYear = 2030;
     $lastYear = 1900;
     for($i=$firstYear;$i>=$lastYear;$i--){
         echo '<option value='.$i.'>'.$i.'</option>';
