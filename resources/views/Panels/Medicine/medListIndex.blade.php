@@ -18,22 +18,22 @@
                               <th class="th-sm tblheadfont1">Image</th>
                               <th class="th-sm tblheadfont1">Medicine Name</th>
                               <th class="th-sm tblheadfont1">Code</th>
-                              <th class="th-sm tblheadfont1">Price</th>
+                              <th class="th-sm tblheadfont1">Company Name</th>
                               <th class="th-sm tblheadfont1 tbw">Action</th>
                             </tr>
                           </thead>
                             <tbody>
                                 @foreach($medicine as $medicines)
-                                <tr class="text-center tr-bg">
+                                <tr class="text-center highlight">
                                     <td class="pwd">
                                     @if ($medicines->medicinePhoto != null)
-                                      <img src="{{ asset('images/medicinePhotos/'.$medicines->medicinePhoto) }}" height="50px" width="90px" alt="">
+                                      <img src="{{ asset('images/medicinePhotos/'.$medicines->medicinePhoto) }}" height="50px" width="90px" alt="" class="img-shadow">
                                       @else
-                                      <img src="{{ asset('images/medicineicon.png') }}" height="50px" width="90px" alt="">
+                                      <img src="{{ asset('images/medicineicon.png') }}" height="50px" width="90px" alt="" class="img-shadow">
                                       @endif </td>
                                     <td class="pad-top">{{$medicines->name}}</td>
                                     <td class="pad-top">{{$medicines->productCode}}</td>
-                                    <td class="pad-top">&#8369;{{$medicines->price}}</td>
+                                    <td class="pad-top">{{$medicines->companyName}}</td>
                                     <td class="pad-top"><button type="submit" class="btn btn-primary" onclick="window.location='{{route('medicine.show', $medicines->id)}}'">select</button></td>
                                 </tr>
                                 @endforeach

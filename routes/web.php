@@ -15,7 +15,7 @@
 
 
 Route::get('/', function () {
-    return view('homePage');
+    return view('Layouts.master');
 });
 
 Route::get('/payment', function () {

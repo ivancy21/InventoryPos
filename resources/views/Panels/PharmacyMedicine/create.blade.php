@@ -21,9 +21,9 @@
                                   <div class="z-depth-1-half mb-1">
                                     {{-- Photo Insertion --}}
                                         @if ($medicine->medicinePhoto != null)
-                                        <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="200px" class="img-fluid img-size" alt="">
+                                        <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size ="200px" class="img-fluid img-size img-shadow" alt="">
                                         @else
-                                        <img src="{{ asset('images/medicineicon.png') }}" size="200px" class="img-fluid img-size" alt="">
+                                        <img src="{{ asset('images/medicineicon.png') }}" size="200px" class="img-fluid img-size img-shadow" alt="">
                                         @endif 
                                   </div>      
                                             <table class="table table-borderless dataDisplayer">
