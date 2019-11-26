@@ -19,8 +19,8 @@
                             <div class="flex HeaderBody">
                                     <form class="md-form">
                                             <div class="file-field">
-                                            <div class="z-depth-1-half mb-1">
-                                                <img src="{{ asset('images/medicineicon.png') }}" size="250px" id="Photo"  alt="" class="img-fluid img-size"
+                                            <div class="z-depth-1-half mb-4">
+                                                <img src="{{ asset('images/medicineicon.png') }}" size="250px" id="Photo"  alt="" class="img-fluid img-size img-shadow"
                                                 alt="example placeholder">
                                             </div>
                                             <div class="d-flex justify-content-center">
@@ -80,10 +80,10 @@
                                         <div class="col-sm-6">
                                                 <label  class="fnt">Side Effect</label>       
                                                 <input type="text" id="effects" class="form-control" name="sideEffects" >
-                                            </div>
+                                            </div> 
                                         </div>
                                 </div>
-                               <label type="hidden" value="{{$medicine}}"> </label>
+                             
                             <div class="DivTemplate">
                                 <p class='DivHeaderText' style="font-size:9px;">ACTIONS</p>
                                 <div class="hr mb-2"></div> 

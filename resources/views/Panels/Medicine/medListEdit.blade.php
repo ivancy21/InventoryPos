@@ -21,9 +21,9 @@
                                         <div class="file-field">
                                             <div class="z-depth-1-half mb-4">
                                                 @if ($medicine->medicinePhoto != null)
-                                                <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size="250px" class="img-fluid img-size" alt="">
+                                                <img src="{{ asset('images/medicinePhotos/'.$medicine->medicinePhoto) }}" size="250px" id="Photo" class="img-fluid img-size img-shadow" alt="">
                                                 @else
-                                                <img src="{{ asset('images/medicineicon.png') }}" size="250px"  id="Photo" class="img-fluid img-size" alt="">
+                                                <img src="{{ asset('images/medicineicon.png') }}" size="250px"  id="Photo" class="img-fluid img-size img-shadow" alt="">
                                                 @endif
                                             </div>
                                             <div class="d-flex justify-content-center">
@@ -46,7 +46,7 @@
                                         <span class="HeaderBannerText">Details</span>
                                 </div>
                                 <div class="flex HeaderBody">
-                                    <div class="row">
+                                    <div class="row  mb-2">
                                         <div class="col">
                                             <label  class="fnt">Medicine Code</label>
                                         <input type="text" id="productCode" class="form-control" name="productCode" value="{{$medicine->productCode}}" required>
@@ -57,7 +57,7 @@
                                             <input type="text" id="name" class="form-control" name="name" value="{{$medicine->name}}" required>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row  mb-2">
                                         <div class="col">
                                                 <label  class="fnt">Category</label>
                                                 <input type="text" id="category" class="form-control" name="category" value="{{$medicine->category}}" >
@@ -68,7 +68,7 @@
                                                 <input type="text" id="sellingPrice" class="form-control" name="price" value="{{$medicine->price}}" pattern="^\d*(\.\d{0,2})?$" required >
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row  mb-2">
                                         <div class="col">
                                                 <label  class="fnt">Generic Name</label>
                                                 <input type="text" id="genericName" class="form-control" name="genericName" value="{{$medicine->genericName}}" >
@@ -79,7 +79,7 @@
                                             <input type="text" id="companyName" class="form-control" name="companyName" value="{{$medicine->companyName}}" >
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row  mb-2">
                                     <div class="col-sm-6">
                                             <label  class="fnt">Side Effect</label>       
                                             <input type="text" id="effects" class="form-control" name="sideEffects" value="{{$medicine->sideEffects}}" >

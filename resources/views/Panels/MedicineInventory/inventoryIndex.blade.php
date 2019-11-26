@@ -24,7 +24,7 @@
                   
                   @foreach($medicine as $medicines)
                  
-                  <tr class="text-center tr-bg">
+                  <tr class="text-center highlight">
                     <td>{{$medicines->name}}</td>
                     <td>{{$medicines->productCode}}</td>
                     <td>&#8369;{{$medicines->price}}</td>
