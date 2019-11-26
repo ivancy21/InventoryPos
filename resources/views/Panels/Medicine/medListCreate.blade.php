@@ -1,11 +1,10 @@
 @extends('Layouts.master')
 @section('content')
 
-@include('Layouts.verticalSideBar')
 @include('Layouts.cropImageModal')
 
 
-<div class="content-container">
+
     <form class="form-horizontal" method="POST" action="{{route('medicine.store')}}">
         @csrf
         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -97,7 +96,7 @@
             </div>
         </div>
     </form>
-</div>
+
 
 
     

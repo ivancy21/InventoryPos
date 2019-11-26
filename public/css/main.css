@@ -135,21 +135,6 @@ a.navigation:hover, .dropdown:hover .dropbtn {
 
 /*sidenav css*/
 
-.sidebar-container {
-  position: fixed;
-  width: 220px;
-  height: 100%;
-  left: 0;
-  border:1px solid rgb(55, 140, 189);
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: linear-gradient(0deg, rgba(117,117,117,1) 0%, rgba(51,62,60,1) 100%);
-  color: #fff;
-}
-
-.content-container {
-  padding-top: 20px;
-}
 
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
@@ -516,5 +501,4 @@ table.dataDisplayer td:nth-child(odd), .oddrow {
   color: #676767;
   font-weight: 600;
 }
-
 

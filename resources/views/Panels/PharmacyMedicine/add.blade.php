@@ -1,10 +1,8 @@
 @extends('Layouts.master')
 @section('content')
 
-@include('Layouts.verticalSideBar')
 @include('Layouts.cropImageModal')
 
-<div class="content-container">
       <form class="form-horizontal" method="POST" action="{{route('pharmacyMedicine.store')}}">
             @csrf
            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -103,17 +101,17 @@
                                                 <label  class="fnt">Manufactured Date</label>
                                                 </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='month' id='month' onchange="getDay('month', 'day', 'year');" class="form-control" required>
+                                        <select name='month' id='month2' onchange="getDay('month2', 'day2', 'year2');" class="form-control" required>
                                             {!! month() !!}
                                         </select>
                                     </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='day' id='day' class='form-control' required> 
+                                        <select name='day' id='day2' class='form-control' required> 
                                             <option value="" disabled selected>Day</option>
                                         </select>
                                     </div>
                                     <div class="form-group col-sm-3">
-                                        <select name='year' id='year' onchange="getDay('month', 'day', 'year');" class="form-control" required>
+                                        <select name='year' id='year2' onchange="getDay('month2', 'day2', 'year2');" class="form-control" required>
                                             <option value="" disabled selected>Year</option>
                                             {!! year() !!}
                                         </select>
@@ -127,17 +125,17 @@
                                         <label  class="fnt">Expiration Date</label>
                                         </div>
                             <div class="form-group col-sm-3">
-                                <select name='month' id='month' onchange="getDay('month', 'day', 'year');" class="form-control" required>
+                                <select name='month' id='month3' onchange="getDay('month3', 'day3', 'year3');" class="form-control" required>
                                     {!! month() !!}
                                 </select>
                             </div>
                             <div class="form-group col-sm-3">
-                                <select name='day' id='day' class='form-control' required> 
+                                <select name='day' id='day3' class='form-control' required> 
                                     <option value="" disabled selected>Day</option>
                                 </select>
                             </div>
                             <div class="form-group col-sm-3">
-                                <select name='year' id='year' onchange="getDay('month', 'day', 'year');" class="form-control" required>
+                                <select name='year' id='year3' onchange="getDay('month3', 'day3', 'year3');" class="form-control" required>
                                     <option value="" disabled selected>Year</option>
                                     {!! year() !!}
                                 </select>
@@ -164,7 +162,7 @@
             </div>
       </div>
 </div>
-</div>
+
 <script>
   $(document).ready(function () {
       //Crop image
@@ -240,7 +238,7 @@
 
 
     //getting days on day dropdownlist function
-function getDay(month , day, year){
+function getDay(month, day, year){
     month = document.getElementById(month);
     day = document.getElementById(day);
     year = document.getElementById(year);
@@ -280,6 +278,7 @@ function getDay(month , day, year){
         }
     }    
 }
+
 
 </script>
 

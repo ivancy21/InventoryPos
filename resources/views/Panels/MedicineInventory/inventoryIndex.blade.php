@@ -1,14 +1,7 @@
 @extends('Layouts.master')
 @section('content')
 
-@include('Layouts.verticalSideBar')
-
-<div class="content-container">
-
-
-
-    <div class="container">
-
+      <div class="container">
             <div class="d-flex flex-column">
                     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
                     <span class="HeaderBannerText">Medicines Inventory</span>
@@ -37,15 +30,15 @@
                     <td>{{$medicines->price}}</td>
                     <td>{{$medicines->pharmacyMedicines->sum('quantity')}}</td>
                     <td class="cnterAlgn"><div class="btn-group">
-                            <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Action
-                            </button>
-                            <div class="dropdown-menu">
-                                <button type="submit" class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.show', $medicines->id)}}'"> <i class="fa fa-edit"></i> Add Quantity</button>   
-                                     <button type="submit" onclick="window.location='{{route('inventory.show', $medicines->id)}}'" class="dropdown-item" > <i class="fa fa-trash-alt"></i> View History</button>                   
-                            </div>
-                                              
-                        </td>
+                        <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Action
+                        </button>
+                        <div class="dropdown-menu">
+                            <button type="submit" class="dropdown-item" onclick="window.location='{{route('pharmacyMedicine.show', $medicines->id)}}'"> <i class="fa fa-edit"></i>Add Quantity</button>
+                            <button type="submit" onclick="window.location='{{route('inventory.show',$medicines->id)}}'" class="dropdown-item" > <i class="fa fa-trash-alt"></i>View History</button>
+                        </div>
+                    </td>
+                  </div>
                 </tr>
               
                   @endforeach
@@ -53,7 +46,7 @@
               </table>   
           </div>
         </div>
-      </div>
+    
 
 <script>
  
