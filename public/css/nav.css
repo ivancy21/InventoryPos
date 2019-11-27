@@ -166,6 +166,10 @@ a.article, a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
+
+    .cards { 
+          margin-left: 5px;
+        }
  
     .container{
         margin:0px;
