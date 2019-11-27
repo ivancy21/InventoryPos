@@ -36,7 +36,7 @@
                                                         </tr>
                                                         
                                                         <tr class="highlight">
-                                                            <td width="200px">Medicine Code</td>
+                                                            <td width="130px">Medicine Code</td>
                                                             <td>{{$medicine->productCode}}</td>
                                                         </tr>
                                                     
