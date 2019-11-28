@@ -18,8 +18,8 @@ class Medicine extends Migration
             $table->string('productCode');
             $table->float('price')->nullable();
             $table->string('name');
-            $table->string('genericName')->nullable();
-            $table->string('companyName')->nullable();
+            $table->string('genericName');
+            $table->string('companyName');
             $table->string('category')->nullable();
             $table->string('sideEffects')->nullable();
             $table->timestamps();

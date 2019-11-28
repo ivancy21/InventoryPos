@@ -26,41 +26,41 @@
 
 
                                         <div class="col-sm-6">
-                                        <div class="table-responsive">
+                                        <div class="table-responsive highlight">
                                                 <table class="table table-borderless dataDisplayer">
                                                     <tbody>
                                                         
-                                                        <tr class="highlight">
+                                                        <tr>
                                                             <td>Medicine Name</td>
                                                             <td>{{$medicine->name}}</td>
                                                         </tr>
                                                         
-                                                        <tr class="highlight">
+                                                        <tr>
                                                             <td width="130px">Medicine Code</td>
                                                             <td>{{$medicine->productCode}}</td>
                                                         </tr>
                                                     
-                                                        <tr class="highlight">
+                                                        <tr>
                                                             <td>Generic Name</td>
                                                             <td>{{$medicine->genericName}}</td>
                                                         </tr>
                                                         
-                                                        <tr class="highlight">
+                                                        <tr>
                                                             <td>Company Name</td>
                                                             <td>{{$medicine->companyName}}</td>
                                                         </tr>
                                                             
-                                                        <tr class="highlight">
+                                                        <tr>
                                                             <td>Category</td>
                                                             <td>{{$medicine->category}}</td>
                                                         </tr>
                                                         
-                                                        <tr class="highlight">
+                                                        <tr>
                                                             <td>Selling Price</td>
                                                             <td>{{$medicine->price}}</td>
                                                         </tr>
                                                         
-                                                        <tr class="highlight">
+                                                        <tr>
                                                             <td>Side Effect</td>
                                                             <td>{{$medicine->sideEffects}}</td>
                                                         </tr>

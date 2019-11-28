@@ -14,12 +14,58 @@ class MedicineController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request   )
     {
         //
-        $medicine = Medicine::latest()->get();
-        return view('Panels.Medicine.medListIndex',compact("medicine"));
+        
+        
+        $medicine=Medicine::all();
+        if($request->has('search')){
+            $query = $request->get('search');
+            $medicine = Medicine::where("name", 'LIKE', '%'.$query.'%')->orWhere("genericName", 'LIKE', '%'.$query.'%')->orWhere("companyName", 'LIKE', '%'.$query.'%')
+                        ->paginate(20);
+            
+            return view('Panels.Medicine.medListIndex',compact("medicine"));
+        
+        }
+        if($request->has('latest')){
+            $medicine=Medicine::latest()->get();
+                 
+            return view('Panels.Medicine.medListIndex',compact("medicine"));
+        
+        }
+        if($request->has('oldest')){
+            $medicine=Medicine::oldest()->get();
+                 
+            return view('Panels.Medicine.medListIndex',compact("medicine"));
+        
+        }
+
+        if($request->has('A-Z')){
+            $medicine=Medicine::orderBy('name','asc')->get();
+                 
+            return view('Panels.Medicine.medListIndex',compact("medicine"));
+        
+        }
+        
+        if($request->has('Z-A')){
+            $medicine=Medicine::orderBy('name','desc')->get();
+                 
+            return view('Panels.Medicine.medListIndex',compact("medicine"));
+        
+        }
+
+
+
+        
+        else {
+            return view('Panels.Medicine.medListIndex',compact("medicine"));
+        }
+
+          
     }
+    
+    
 
     /**
      * Show the form for creating a new resource.

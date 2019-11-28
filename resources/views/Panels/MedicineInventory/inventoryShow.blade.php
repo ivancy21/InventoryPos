@@ -21,16 +21,8 @@
                                            <img src="{{ asset('images/medicineicon.png') }}" size="200px" class="img-fluid img-size img-shadow" alt="">
                                            @endif 
                                      </div>      
-                                               <table class="table table-borderless tr-bg">
-                                                       <tbody>
-                                                            <tr class="highlight text-center">
-                                                               <td>{{$medicine->productCode}}</td>
-                                                           </tr>
-                                                           <tr class="highlight text-center">
-                                                                   <td>{{$medicine->name}}</td>
-                                                               </tr>
-                                                       </tbody>
-                                                   </table>                                     
+                                     <p style="margin-top:5px; color:black;" class="text-center"><b> {{$medicine->name}}</b>({{$medicine->genericName}})</p>
+                                     <p style="margin-top:-17px; color:black;" class="text-center">{{$medicine->companyName}}</p>                
                                    </div>
                            </form>
                        </div>
@@ -41,7 +33,8 @@
                     <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
                             <span class="HeaderBannerText">History</span>
                     </div>
-
+                    <a onclick="window.location='{{route('pharmacyMedicine.show',$medicine->id)}}'" style="float:right; color:#00a1db;"  data-toggle="tooltip" title="Add Medicine"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>                                            
+        
                     <div class="flex HeaderBody"> 
                             <div class="table-responsive">
                                     <table class="table table-image table-hover" id="TblSorter1" cellspacing="0" width="100%">

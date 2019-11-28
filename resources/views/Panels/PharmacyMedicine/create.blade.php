@@ -26,18 +26,9 @@
                                         <img src="{{ asset('images/medicineicon.png') }}" size="200px" class="img-fluid img-size img-shadow" alt="">
                                         @endif 
                                   </div>      
-                                            <table class="table table-borderless dataDisplayer">
-                                                    <tbody>
-                                                         <tr class="highlight">
-                                                            <td>Medicine Code</td>
-                                                            <td>{{$medicine->productCode}}</td>
-                                                        </tr>
-                                                        <tr class="highlight">
-                                                                <td>Medicine Name</td>
-                                                                <td>{{$medicine->name}}</td>
-                                                            </tr>
-                                                    </tbody>
-                                                </table>                                     
+                                <p style="margin-top:5px; color:black;" class="text-center"><b> {{$medicine->name}}</b>({{$medicine->genericName}})</p>
+                                <p style="margin-top:-17px; color:black;" class="text-center">{{$medicine->companyName}}</p>
+                                                                            
                                 </div>
                         </form>
                     </div>
@@ -56,11 +47,8 @@
                                         </div>
                                         <div class="col-sm-9">              
                                                 <input type="hidden" id="medicineId" class="form-control" value="{{$medicine->id}}" name="medicineId">
-                                                <input type="text" list="quantity" name="quantity">
-                                                <datalist id="quantity">
-                                              {!!quantity()!!}
-                                                </datalist>
-                                            </div>
+                                                <input type="number" list="quantity" name="quantity" required>
+                                        </div>
                                     </div>
                                     <div class="row mb-3">
                                 <div class="col-sm-3 ">
