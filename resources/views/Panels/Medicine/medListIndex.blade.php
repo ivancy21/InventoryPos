@@ -6,16 +6,45 @@
     <div class="d-flex flex-column mb-4">
         <div class="HeaderBanner p-2 px-3" style="border-radius: .75rem .75rem 0rem 0rem; letter-spacing: 1px;">
              <span class="HeaderBannerText">Medicines</span>
+             <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:white;"  data-toggle="tooltip" title="Add Medicine"><i class="fas fa-plus fa-lg "></i></a>                                            
+              
         </div>
         <div class="flex HeaderBody2">
-                <a onclick="window.location='{{route('medicine.create')}}'" style="float:right; color:#00a1db;"  data-toggle="tooltip" title="Add Medicine"><i class="fas fa-plus fa-2x mt-1 mr-2 "></i></a>                                            
-        </div>
+          <div class="container" style="margin:3px;">
+          <div class="row ml-1">
+                   <div class="col-sm-3">
+                      <div class="row">
+                    <form action="{{route('medicine.index')}}" method="GET" >
+                        <input type="submit" name="latest" class="btn btn-sm btn-primary ml-2" value="Latest" />
+                    </form>     
+                   
+                  <form action="{{route('medicine.index')}}" method="GET">
+                        <input type="submit" name="oldest" class="btn btn-sm btn-primary ml-2" value="Oldest" />
+                    </form>
+            
+                      <form action="{{route('medicine.index')}}" method="GET">
+                      <input type="submit" name="A-Z" class="btn btn-sm btn-primary ml-2" value="A-Z" />
+                    </form>
+ 
+                    <form action="{{route('medicine.index')}}" method="GET">
+                      <input type="submit" name="Z-A" class="btn btn-sm btn-primary ml-2" value="Z-A" >
+                    </form>
+                  </div>
+                  </div>
+                  <div class="col-sm-3 offset-sm-6">
+                        <form action="{{route('medicine.index')}}" method="GET">
+                          <input type="text" name="search" style="width:190px;" value='{{ request()->input('search') }}'/>
+                          <input type="submit" class="btn btn-sm btn-primary float-right" value="Search"/>
+                        </form>    
+                    </div>
+                  </div>
+                </div>
+        </div>       
         
-          
-        
-        
+       
 
-  <div class="CardDiv" style="margin-top:50px">
+       <div class="CardDiv">
+  
   @foreach($medicine as $medicines)
       <div class="cards">
           <div class="image">
@@ -37,37 +66,8 @@
         </div>
           <!--cards -->
           @endforeach
-              <div class="container" style="margin-top:-250px;float:right"> 
-                <form action="{{route('medicine.index')}}" method="GET" >
-                    <input type="submit" name="latest" class="btn btn-sm btn-primary" value="Latest" />
-                </form>
-              </div>
-
-              <div class="container" style="margin-top:-250px; margin-left:50px; float:left "> 
-              <form action="{{route('medicine.index')}}" method="GET">
-                    <input type="submit" name="oldest" class="btn btn-sm btn-primary" value="Oldest" />
-                </form>
-              </div>
-
-              <div class="container" style="margin-top:-250px; margin-left:105px; float:left"> 
-                  <form action="{{route('medicine.index')}}" method="GET">
-                  <input type="submit" name="A-Z" class="btn btn-sm btn-primary" value="A-Z" />
-                </form>
-              </div>
-                
-              <div class="container" style="margin-top:-250px; margin-left:148px; float:left"> 
-                <form action="{{route('medicine.index')}}" method="GET">
-                  <input type="submit" name="Z-A" class="btn btn-sm btn-primary" value="Z-A" >
-                </form>
-                
-                <div class="container" style="margin-top:-30px;margin-left:700px"> 
-                    <form action="{{route('medicine.index')}}" method="GET">
-                      <input type="text" name="search" value='{{ request()->input('search') }}' />
-                      <input type="submit" class="btn btn-sm btn-primary" value="Search" />
-                    </form>
-                </div>
-    
-              </div>
+          
+            
   </div>
       </div>
     </div>
